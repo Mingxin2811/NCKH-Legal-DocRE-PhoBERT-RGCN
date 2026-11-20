@@ -1,18 +1,86 @@
-# Nghien cuu Khoa hoc: PhoBERT + RGCN cho Trich xuat Quan he Phap ly (DocRE)
+# Trích xuất thực thể và quan hệ pháp luật với PhoBERT và RGCN
 
-De tai: "Ung dung Graph Neural Networks (GNN) ket hop Transformer trong trich xuat quan he thuc the cap do tai lieu tren van ban quy pham phap luat Viet Nam".
+Hệ thống xử lý văn bản pháp luật tiếng Việt bằng **PhoBERT-base-v2 + Sliding Window +
+NER start/end + RGCN + Gated Fusion**, với 40 loại thực thể và 22 quan hệ đa nhãn.
 
-## 1. Tong quan kien truc
-- **Giai doan 1 (Ngay nghia & NER):** PhoBERT-base-v2 voi co che Cua so truot (Sliding Window 256/128) va mo hinh Boundary NER (80 dau ra sigmoid).
-- **Giai doan 2 (Do thi & DocRE):** Xay dung do thi khach quan tu vi tri thuc the, mang 2 tang RGCN ket hop Gated Fusion va bo phan loai da nhan 22 quan he phap ly.
+[Mở trên Google Colab](https://colab.research.google.com/github/Mingxin2811/NCKH-Legal-DocRE-PhoBERT-RGCN/blob/main/google_colab/NCKH_PhoBERT_RGCN_Training.ipynb)
+· [Hướng dẫn 11 bước](google_colab/README_COLAB.md)
 
-## 2. Cau truc thu muc
-- `auto_label_pipeline.py`: Pipeline gan nhan tu dong (Distant Supervision + Regex).
-- `build_document_graph.py`: Xay dung do thi tai lieu va khong gian dac trung nut.
-- `labels.py`: Dinh nghia 40 nhan thuc the va 22 quan he phap ly.
-- `google_colab/`: Notebook huan luyen doc lap tren Google Colab GPU.
-- `docs/`: Bao cao tong ket va tai lieu dac ta.
-- `results/`: Bieu do huan luyen va ket qua thuc nghiem.
+## Chạy trên Google Colab
 
-## 3. Huong dan chay
-Tham khao file `google_colab/README_COLAB.md` de thuc thi notebook tren Google Colab hoac chay script tren may ca nhan theo huong dan.
+1. Mở notebook, bật GPU và kết nối Drive.
+2. Cài thư viện theo Bước 2.
+3. Bước 3: sửa `DATASET_DIR` tới dữ liệu đã giải nén; đặt `OUTPUT_DIR` mới và giữ
+   `TRAIN_NEW_MODEL = True`.
+4. Chạy Bước 4–7 để kiểm tra dữ liệu, chia tập và huấn luyện.
+5. Chạy Bước 8–10 để xuất bảng và sáu biểu đồ đánh giá.
+6. Bước 11: tải một DOCX/TXT lên để nhận diện và xem đồ thị quan hệ tương tác.
+7. Chạy cell cuối để tải ZIP gồm checkpoint, bảng, hình và kết quả dự đoán.
+
+Notebook chạy độc lập, không cần script Python bên ngoài. Dữ liệu và trọng số lưu trên
+Drive. JSON phải có `full_text`, `entities`, `relations`; CSV là bản đối chiếu, không
+được tính thêm thành tài liệu huấn luyện.
+
+Chỉ kiểm tra DOCX ở phiên sau: đặt `TRAIN_NEW_MODEL = False`, chọn thư mục kết quả v2
+đã lưu, chạy Bước 1–7 để nạp định nghĩa rồi chạy Bước 11. Không huấn luyện lại.
+
+## Cấu trúc mã nguồn
+
+| Đường dẫn | Vai trò |
+|---|---|
+| `google_colab/` | Notebook độc lập, hướng dẫn và thư viện |
+| `colab_support/data_pipeline.py` | Kiểm tra dữ liệu, chia tập, tạo cạnh và ứng viên |
+| `colab_support/context_encoder.py` | PhoBERT, cửa sổ BPE và ánh xạ vị trí |
+| `colab_support/model_gnn.py` | BoundaryNER và LegalRGCN |
+| `colab_support/training.py` | Huấn luyện, chọn checkpoint, đánh giá |
+| `colab_support/document_io.py` | Đọc DOCX/TXT/JSON |
+| `colab_support/prediction_view.py` | Xuất CSV/JSON, tô thực thể, đồ thị HTML/PNG |
+| `colab_support/reporting.py` | Bảng và biểu đồ thực nghiệm |
+| `colab_support/test_thu_cong.py` | Nạp checkpoint và suy luận |
+| `colab_support/rebuild_notebook.py` | Sinh notebook từ mã nguồn |
+| `colab_support/tests/` | Kiểm thử chức năng và luồng notebook |
+| `auto_label_pipeline.py` | Công cụ gán nhãn dữ liệu nguồn, tùy chọn |
+| `labels.py` | Schema nhãn và ánh xạ |
+
+`docs/` và `results/` có từ lần công bố trước được giữ làm tài liệu lịch sử. Kết quả đó
+không đại diện cho một lần huấn luyện pipeline v2. Bộ train BIO–CRF và GNN cũ được thay
+bằng mã trong `colab_support/`; checkpoint v1 cần huấn luyện lại.
+
+## Kiến trúc và đánh giá
+
+- PhoBERT-base-v2 đóng băng; mean pooling tạo biểu diễn ngữ nghĩa.
+- Cửa sổ 254 token nội dung + BOS/EOS, bước dịch 128 token nội dung.
+- NER: 40 đầu ra start và 40 đầu ra end, không dùng CRF.
+- Hai tầng RGCN, bốn loại cạnh vị trí; quan hệ chuẩn không làm cạnh đầu vào.
+- Gated fusion và bộ phân loại 22 sigmoid độc lập.
+- Chia khoảng 80/10/10 theo nhóm thân trùng chính xác đã chuẩn hóa, lưu seed/manifest;
+  cần rà soát thêm phiên bản gần trùng và các lớp hiếm.
+- NER chọn checkpoint bằng validation exact-span/type F1; RE chọn bằng micro-F1
+  validation với thực thể NER dự đoán. Test không tham gia chọn mô hình/ngưỡng.
+- Báo cáo chính: NER P/R/F1; RE micro-P/R/F1 và Macro-F1 22 nhãn. Báo riêng thực thể
+  chuẩn và thực thể dự đoán; xem thêm support, candidate recall, lỗi theo nhãn.
+
+Nhãn tự động cần được rà soát. Lớp vắng mẫu có F1=0 trong Macro-F1 22 lớp. Điểm sigmoid
+chưa phải xác suất đúng đã hiệu chỉnh. DOCX không có đáp án chỉ cho dự đoán, không tự
+chấm P/R/F1. Không cam kết chỉ số đạt một mức định trước.
+
+## Chạy trên máy
+
+```bash
+python -m pip install -r requirements.txt
+python -m unittest discover -s colab_support/tests -p "test_*.py" -v
+python colab_support/rebuild_notebook.py
+python colab_support/training.py --dataset /path/to/dataset --output /path/to/new_run
+python colab_support/test_thu_cong.py --model-dir /path/to/new_run --input-file /path/to/new.docx --output prediction.json
+```
+
+[Hướng dẫn mã nguồn](colab_support/README.md) mô tả thêm phép thử bằng encoder thật.
+Chạy một epoch trên dữ liệu nhỏ chỉ xác minh chương trình, không đo chất lượng nghiên cứu.
+
+## Nguồn nền tảng
+
+- [PhoBERT của VinAI](https://github.com/VinAIResearch/PhoBERT)
+- [RGCNConv của PyTorch Geometric](https://pytorch-geometric.readthedocs.io/en/latest/generated/torch_geometric.nn.conv.RGCNConv.html)
+
+Đề tài kế thừa các mô hình và thư viện trên; không tự nhận đã tiền huấn luyện PhoBERT
+hoặc phát hành checkpoint LegalPhoBERT chuyên luật.

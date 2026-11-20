@@ -1,96 +1,111 @@
-# Chạy notebook trên Google Colab
+# PhoBERT-base-v2 + Sliding Window + RGCN trên Google Colab
 
-Thư mục này chỉ giữ những mục cần cho người chạy:
+Notebook độc lập: chỉ upload `NCKH_PhoBERT_RGCN_Training.ipynb`, không cần các file Python
+trong `colab_support/`. Dataset và kết quả nằm trên Drive.
 
-```text
-google_colab/
-├── NCKH_PhoBERT_RGCN_Training.ipynb  # Notebook độc lập, 11 bước
-├── README_COLAB.md                 # Hướng dẫn này
-├── requirements_colab.txt          # Tham khảo các thư viện
-└── dataset/                       # Có thể đặt dữ liệu ở đây, hoặc nơi khác trên Drive
-```
+## Chuẩn bị và chạy 11 bước
 
-**Chỉ cần upload notebook và dataset. Không cần file Python bên ngoài.**
-Mã phát triển, tests, dữ liệu mẫu và bản sao lưu được giữ tại `../colab_support/`,
-không cần upload thư mục đó lên Colab. Dataset gốc trên máy không bị sửa hay di chuyển.
+Mở notebook mới, chọn **Runtime → Change runtime type → GPU**. Dataset cần giải nén,
+có `*_ket_qua.json` chứa `full_text`, `entities`, `relations`. CSV là bản đối chiếu,
+không được đếm thêm thành tài liệu. URL thư mục Drive không phải đường dẫn dữ liệu;
+hãy thêm thư mục được chia sẻ vào My Drive hoặc sao chép/giải nén vào nơi truy cập được.
 
-## Chạy từng bước
-
-1. Mở **bản notebook mới** từ máy trong Colab. Nếu đang mở bản cũ trên Drive, hãy thay
-   bằng file `.ipynb` đã cập nhật này và khởi động lại phiên để tránh dùng mã cũ trong RAM.
-2. Bật GPU ở **Runtime → Change runtime type**.
-3. Chạy **Bước 1** để kết nối Google Drive, sau đó **Bước 2** để cài thư viện.
-4. Ở **Bước 3**, chỉ sửa hai đường dẫn cho đúng vị trí Drive của bạn:
+1. **Kết nối Drive:** chạy Bước 1, cấp quyền cho Colab.
+2. **Cài thư viện:** chạy Bước 2; nếu Colab yêu cầu restart thì restart, kết nối lại Drive.
+3. **Đường dẫn:** sửa `DATASET_DIR` và đặt `OUTPUT_DIR` mới. Giữ
+   `TRAIN_NEW_MODEL = True`, `TRAIN_SEED = 42`.
 
    ```python
    DATASET_DIR = Path('/content/drive/MyDrive/NCKH_train/Dataset')
-   OUTPUT_DIR = Path('/content/drive/MyDrive/NCKH_Results/raw_doc_run_42')
+   OUTPUT_DIR = Path('/content/drive/MyDrive/NCKH_Results/phobert_rgcn_v2_run_42')
    ```
 
-   Tên `Dataset`/`dataset` phân biệt hoa thường. Thư mục dữ liệu phải đã giải nén và
-   có các file `*_ket_qua.json` trong các thư mục con. Không đặt đường dẫn tới file ZIP.
-   JSON cần có `full_text`, `entities` và `relations`, giống dữ liệu trong `dataset/` của dự án.
-5. Chạy **Bước 4 → 5 → 6** để nạp schema, kiểm tra dữ liệu và định nghĩa model.
-   Bước 5 hiện trực tiếp lỗi dữ liệu kèm tên file nếu có; không gọi script bằng subprocess.
-6. Ở đầu cell **Bước 7**, giữ hoặc sửa cấu hình:
+   Tên phân biệt hoa/thường. Không trỏ tới ZIP. Mỗi lần train dùng thư mục mới;
+   chương trình từ chối ghi đè một run đã có `run_config.json`.
+4. **Schema:** nạp 40 loại thực thể và 22 loại quan hệ.
+5. **Kiểm tra dữ liệu:** xem số văn bản và số mẫu theo nhãn. Chia khoảng **80/10/10** theo
+   nhóm thân trùng chính xác sau chuẩn hóa; không nhân bản khi thiếu 3 thân khác nhau.
+   Kiểm tra thêm phiên bản gần trùng và các lớp hiếm. Audit kỹ thuật không chứng nhận
+   nhãn đúng ngữ nghĩa. Dataset gốc không bị sửa.
+6. **Kiến trúc:** PhoBERT-base-v2 đóng băng, cửa sổ 256 (254 nội dung + BOS/EOS), stride
+   128; NER start/end, RGCN 2 tầng, gated fusion và 22 đầu ra sigmoid.
+7. **Train:** NER tối đa 20 epoch, RE 30, patience 5. Train cả semantic và rgcn. Thiếu
+   VRAM thì giảm `ENCODER_BATCH` xuống 2. NER chọn theo exact-span F1; RE chọn theo
+   micro-F1 validation với thực thể NER dự đoán. Ngưỡng 0.2/0.35/0.5/0.65/0.8 chỉ chọn
+   bằng validation. Mặc định tối đa 5 cặp âm/cặp dương; ứng viên gồm hàng xóm, neo và
+   span bao chứa theo offset. Quan hệ ngoài ứng viên vẫn tính FN khi đánh giá.
+8. **Đường học:** NER và RE vẽ riêng loss và F1 validation; hình lưu PNG.
+9. **Test chính:** NER P/R/F1 exact-span/type; RE micro-P/R/F1 và Macro-F1 22 nhãn.
+   `predicted_entities_end_to_end` là kết quả chính; `gold_entities` chỉ đo riêng RE.
+10. **Phân tích lỗi:** F1 theo loại thực thể và TP/FP/FN theo quan hệ. Bảng chi tiết lưu
+    CSV; bật `SHOW_DETAILED_TABLES` nếu muốn in thêm.
+11. **DOCX mới:** để `INPUT_FILE = None`, chạy và chọn đúng một DOCX/TXT từ máy; hoặc đặt
+    đường dẫn DOCX trên Drive. Hệ thống tự nhận diện, xuất bảng và đồ thị HTML tương tác.
 
-   ```python
-   NER_EPOCHS = 20
-   RELATION_EPOCHS = 30
-   ENCODER = 'vinai/phobert-base-v2'
-   ENCODER_BATCH = 8
-   VARIANTS = 'semantic,rgcn'
-   ```
+Cuối notebook chạy **Đóng gói & Tải Kết quả**: ZIP gồm checkpoint, bảng, hình và kết quả
+DOCX; bỏ cache embedding. Bật `DOWNLOAD_ZIP = True` để tải về máy.
 
-   Chạy cell và đợi hoàn tất. Trình tự: embedding → NER → RE baseline → RE RGCN.
-   Nếu hết GPU RAM, giảm `ENCODER_BATCH` xuống 2. Early stopping có thể dừng trước số epoch tối đa.
-7. Chạy **Bước 8 → 10** để xem biểu đồ, báo cáo test và bảng so sánh thực đo.
-8. Ở **Bước 11**, sửa `NEW_TEXT` hoặc đặt đường dẫn file UTF-8 `.txt` vào `NEW_TEXT_FILE`.
-   Cell tự nhận diện thực thể và quan hệ, lưu toàn bộ vào `prediction.json`.
-9. Cell **Tùy chọn: Đóng gói & Tải Kết quả** tạo ZIP trên Drive, gồm báo cáo/hình/checkpoint,
-   bỏ cache embedding. Đặt `DOWNLOAD_ZIP = True` nếu muốn tải về máy ngay.
+## Chỉ kiểm tra DOCX vào lần mở Colab sau
 
-Chạy lần lượt từ trên xuống, đợi cell trước xong rồi chạy cell sau. Cần ít nhất 3 thân
-văn bản khác nhau để chia train/val/test; 2 văn bản mẫu chỉ đủ kiểm tra định dạng.
+1. Chạy Bước 1–2.
+2. Bước 3: đặt `TRAIN_NEW_MODEL = False`, trỏ `OUTPUT_DIR` đến run **v2** đã hoàn tất.
+3. Chạy Bước 4–7: chỉ nạp định nghĩa, không đọc dataset và không train lại.
+4. Chạy Bước 11, chọn DOCX. Có thể chạy Bước 8–10 để xem lại báo cáo.
 
-## Nếu có lỗi
+Checkpoint `raw-doc-v1` phải giữ riêng; v2 cần train mới. Cache khác checkpoint; notebook
+chưa hỗ trợ khôi phục optimizer/epoch sau khi Colab ngắt phiên.
 
-- **`Không tìm thấy dataset` / `Không có *_ket_qua.json`**: kiểm tra đường dẫn ở Bước 3,
-  Drive đã mount chưa, dữ liệu đã giải nén chưa.
-- **`Cannot read dataset JSON ...` / `Missing full_text ...` / `Unknown ...`**: tên file
-  gây lỗi xuất hiện ngay trong traceback. Sửa file/schema đó; không tự đổi nhãn lạ thành `THUOC`.
-- **`Dataset/seed changed`**: dùng `OUTPUT_DIR` mới để tạo split mới, giữ nguyên kết quả cũ.
-- **`Chạy xong Bước 7 ...`**: mô hình/báo cáo chưa được tạo; chạy train trước khi vẽ/test.
-- Nếu vẫn thấy **`CalledProcessError` gọi `build_document_graph.py`**, bạn đang mở notebook cũ.
-  Notebook mới không có lệnh đó và không cần `PROJECT_DIR`.
+## Tệp kết quả
 
-Traceback `CalledProcessError` cũ chỉ cho biết script ngoài thất bại, không cho biết nguyên nhân
-bên trong. Bản này bỏ lớp gọi script để hiển thị trực tiếp lỗi gốc tại cell.
+```text
+OUTPUT_DIR/
+├── data_audit.json, split_manifest.json, split_summary.json
+├── split_relation_support.json, run_config.json, environment.json
+├── run_status.json                   # complete khi train/test hoàn tất
+├── checkpoints/                      # ner.pt, relation_semantic.pt, relation_rgcn.pt
+├── ner_history.json, relation_*_history.json
+├── ner_test.json, test_semantic.json, test_rgcn.json
+├── report_ner.csv, report_relations.csv # bảng chính, tỷ lệ theo %
+├── entities_per_type.csv, relations_*.csv # bảng chi tiết, tỷ lệ 0–1
+├── comparison.csv                    # toàn bộ chỉ số thô, tỷ lệ 0–1
+├── REPORT.md
+├── figures/                          # 6 biểu đồ PNG
+└── predictions/<tên_docx>_<thời_gian>/
+    ├── input_text.txt                # offset tính trên tệp này
+    ├── source_info.json              # nguồn, thời gian, kiểm tra trùng thân
+    ├── prediction.json               # đầy đủ kết quả
+    ├── entities.csv, relations.csv
+    ├── prediction.html               # văn bản tô màu, đồ thị tương tác
+    └── relation_graph.png            # bản xem gọn
+```
 
-## Đọc kết quả đúng
+## Đọc DOCX và xem đồ thị
 
-- `predicted_entities_end_to_end`: kết quả văn bản mới; `gold_entities`: RE khi đã biết thực thể đúng.
-- NER được đo exact-span/type sau khi chuẩn hóa khoảng trắng quanh thực thể.
-- RE dùng đa nhãn. Không quan hệ = không nhãn dương nào vượt threshold.
-- `accuracy_candidates_exact_set` là Accuracy trên cặp ứng viên, cần so với
-  `no_relation_baseline_accuracy`; nhiều cặp âm có thể khiến Accuracy cao.
-- `precision_macro_22` và `f1_macro_22` luôn tính 22 loại quan hệ dương; lớp không có mẫu
-  có điểm 0. `f1_macro_supported` chỉ là chỉ số phụ trên lớp đang có mẫu.
-- Ma trận ở Bước 9 hiển thị TP/FP/FN từng loại, phù hợp bài toán đa nhãn.
+- Đọc thân văn bản và bảng theo thứ tự; không OCR ảnh, không lấy header/footer hoặc
+  chú thích. DOCX ảnh quét cần OCR trước. Chưa hỗ trợ trực tiếp PDF hoặc `.doc`.
+- Offset theo `input_text.txt`, không theo trang Word.
+- HTML: lọc loại quan hệ/điểm, đổi số nút/cạnh, kéo nút, phóng to và chọn nút để xem
+  đoạn nguồn. Có nút tải SVG. Nếu iframe không hiện trong Colab, tải HTML về mở bằng
+  trình duyệt. HTML hoạt động offline.
+- Cạnh vẽ là quan hệ **dự đoán**, không phải cạnh vị trí đầu vào RGCN. Điểm sigmoid
+  chưa phải xác suất đúng đã hiệu chỉnh. Không có kết quả thì không tạo cạnh giả.
+- PNG tối đa 25 nút/35 cạnh. HTML mặc định 45 nút/80 cạnh, có thể đổi. Với đồ thị rất
+  lớn, HTML xét tối đa 20.000 cạnh điểm cao nhất; JSON/CSV luôn giữ đầy đủ kết quả.
+- Không có đáp án được người kiểm tra thì không chấm được P/R/F1 cho DOCX. Chương trình
+  báo nếu trùng thân chuẩn hóa với manifest; vẫn cần tự kiểm tra bản gần trùng.
+- Thời gian suy luận gồm mã hóa + NER + RE; không gồm đọc DOCX, nạp model và vẽ hình.
+- Nếu NER dự đoán quá 10.000 thực thể hoặc đồ thị vượt 500.000 cạnh vị trí, chương trình
+  dừng và báo rõ. Kiểm tra chất lượng NER, ngưỡng hoặc thử tài liệu ngắn hơn; không cắt
+  ngầm kết quả để tiếp tục.
 
-PhoBERT được đóng băng, chỉ train head NER/RE và RGCN. NER start/end hỗ trợ chồng lấn khác
-loại, còn giới hạn với lồng nhau cùng loại hoặc ranh giới giữa lexical unit; các gold này
-vẫn được tính khi đánh giá. Candidate RE dùng 8 hàng xóm mỗi phía và 12 thực thể đầu làm
-anchor; gold ngoài ứng viên vẫn tính vào FN. Checkpoint/threshold chỉ chọn bằng validation.
+## Giới hạn thực nghiệm
 
-Phụ lục `THÔNG TIN THUỘC TÍNH & LƯỢC ĐỒ TỪ FILE JSON` tự sinh chứa đáp án bị loại khỏi tác vụ;
-cạnh GNN chỉ dựa vào vị trí, không dùng quan hệ đúng. Điểm dựa trên nhãn cung cấp, chưa phải
-test gold được người xác nhận; dữ liệu thiếu nhãn cần được rà soát thủ công.
+Dữ liệu cục bộ 174 văn bản sau lọc chỉ có 6/22 quan hệ có mẫu; phải đọc support thực tế
+của bộ Drive. Macro-F1 cố định 22 lớp không thể đặt mục tiêu 60% với phân bố đó. Cần rà
+soát nhãn tự động, đặc biệt các nhãn chỉ có ở phụ lục tự sinh và nhãn sai ngữ nghĩa.
+NER còn giới hạn ghép ranh giới/lồng nhau cùng loại. Hai tầng RGCN không bảo đảm trao đổi
+toàn bộ tài liệu. Semantic so với RGCN đánh giá cả truyền tin và gated fusion.
 
-Trên bộ 174 văn bản cục bộ: sau lọc còn 40.803 thực thể và 39.126 quan hệ; chỉ 6/22 loại
-quan hệ có mẫu trong thân. Vì vậy Macro-F1 cố định 22 lớp có trần **27,27%** trên toàn bộ
-nhãn đang có (tập test có thể thấp hơn). Muốn 60% đủ 22 lớp cần bổ sung dữ liệu thực sự có
-bằng chứng trong thân. Không giữ phần phụ lục lộ đáp án để nâng điểm.
-
-Kết quả/checkpoint/cache nằm trong `OUTPUT_DIR` trên Drive. Khi chạy lại, cache được tái sử dụng,
-nhưng các head train từ đầu, chưa tiếp tục epoch bị ngắt. Checkpoint thuộc pipeline cũ phải train lại.
+Gặp `Dataset/seed changed`, `Old pipeline manifest` hoặc `Output already contains...`:
+dùng thư mục kết quả mới, giữ nguyên run cũ. File sai offset/ID/mã nhãn cần sửa từ nguồn;
+chương trình không âm thầm biến nhãn lạ thành THUOC.

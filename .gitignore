@@ -12,3 +12,37 @@ venv/
 # OS
 .DS_Store
 Thumbs.db
+
+# Local data/artifacts. Existing tracked historical files remain in the repository.
+dataset/
+raw_data/
+bo_luat/
+lenh1/
+luat1/
+nghi_quyet1/
+nghi_quyet2/
+docs/
+results/
+Ket_qua/
+output_nckh/
+output_results/
+colab_support/output_results/
+colab_support/sample_data/
+google_colab/dataset/
+scratch/
+checkpoints/
+cache/
+.vscode/
+.ruff_cache/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.zip
+*.docx
+*.pdf
+*.pptx
+*.xlsx
+~$*
+~WRL*.tmp

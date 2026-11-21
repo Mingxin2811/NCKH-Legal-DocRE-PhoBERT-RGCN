@@ -1,0 +1,14 @@
+{
+  "counts": {
+    "train": 263,
+    "val": 56,
+    "test": 57
+  },
+  "ratios_requested": {
+    "train": 0.8,
+    "val": 0.1,
+    "test": 0.1
+  },
+  "seed": 42,
+  "note": "Grouped identical normalized bodies; not label-stratified. Review rare-label support and near-duplicate versions manually."
+}

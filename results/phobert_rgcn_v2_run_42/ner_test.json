@@ -1,0 +1,330 @@
+{
+  "precision": 0.6099967116080237,
+  "recall": 0.6950168602472836,
+  "f1": 0.649737302977233,
+  "tp": 1855,
+  "fp": 1186,
+  "fn": 814,
+  "per_type": {
+    "TEN_VAN_BAN": {
+      "precision": 0.5142857142857142,
+      "recall": 0.6101694915254238,
+      "f1": 0.5581395348837208,
+      "tp": 36,
+      "fp": 34,
+      "fn": 23
+    },
+    "SO_HIEU": {
+      "precision": 0.5463917525773195,
+      "recall": 0.9298245614035088,
+      "f1": 0.6883116883116882,
+      "tp": 53,
+      "fp": 44,
+      "fn": 4
+    },
+    "LOAI_VAN_BAN": {
+      "precision": 0.4945054945054945,
+      "recall": 0.7894736842105263,
+      "f1": 0.6081081081081081,
+      "tp": 45,
+      "fp": 46,
+      "fn": 12
+    },
+    "NGANH": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 3,
+      "fn": 2
+    },
+    "NGAY_BAN_HANH": {
+      "precision": 0.8275862068965517,
+      "recall": 0.8888888888888888,
+      "f1": 0.8571428571428572,
+      "tp": 48,
+      "fp": 10,
+      "fn": 6
+    },
+    "LINH_VUC": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0
+    },
+    "NGAY_CO_HIEU_LUC": {
+      "precision": 0.22388059701492538,
+      "recall": 0.5555555555555556,
+      "f1": 0.3191489361702128,
+      "tp": 15,
+      "fp": 52,
+      "fn": 12
+    },
+    "NGAY_HET_HIEU_LUC": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1
+    },
+    "TINH_TRANG_HIEU_LUC": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0
+    },
+    "CO_QUAN_BAN_HANH": {
+      "precision": 0.5333333333333333,
+      "recall": 0.7843137254901961,
+      "f1": 0.634920634920635,
+      "tp": 40,
+      "fp": 35,
+      "fn": 11
+    },
+    "CHUC_DANH": {
+      "precision": 0.375,
+      "recall": 0.54,
+      "f1": 0.4426229508196721,
+      "tp": 27,
+      "fp": 45,
+      "fn": 23
+    },
+    "NGUOI_KY": {
+      "precision": 0.6938775510204082,
+      "recall": 0.6938775510204082,
+      "f1": 0.6938775510204082,
+      "tp": 34,
+      "fp": 15,
+      "fn": 15
+    },
+    "VB_DUOC_HUONG_DAN_AP_DUNG": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0
+    },
+    "VB_DUOC_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH": {
+      "precision": 1.0,
+      "recall": 0.16666666666666666,
+      "f1": 0.2857142857142857,
+      "tp": 1,
+      "fp": 0,
+      "fn": 5
+    },
+    "VB_BI_TAC_DONG_HIEU_LUC_MOT_PHAN": {
+      "precision": 0.14285714285714285,
+      "recall": 0.07142857142857142,
+      "f1": 0.09523809523809523,
+      "tp": 1,
+      "fp": 6,
+      "fn": 13
+    },
+    "VB_BI_TAC_DONG_HIEU_LUC_TOAN_BO": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 7
+    },
+    "VB_DUOC_DINH_CHINH": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0
+    },
+    "VB_DUOC_DAN_CHIEU": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 13,
+      "fn": 10
+    },
+    "CAN_CU_BAN_HANH": {
+      "precision": 0.19858156028368795,
+      "recall": 0.4,
+      "f1": 0.26540284360189575,
+      "tp": 28,
+      "fp": 113,
+      "fn": 42
+    },
+    "VB_DUOC_GIAI_THICH": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0
+    },
+    "VB_BI_DINH_CHI_THI_HANH": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0
+    },
+    "VB_BI_TAM_NGUNG_GIA_HAN": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0
+    },
+    "VB_HUONG_DAN_AP_DUNG": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0
+    },
+    "VB_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1
+    },
+    "VB_QUY_DINH_HET_HIEU_LUC_MOT_PHAN": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0
+    },
+    "VB_QUY_DINH_HET_HIEU_LUC_TOAN_BO": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0
+    },
+    "VB_HOP_NHAT": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0
+    },
+    "VB_DINH_CHINH": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0
+    },
+    "VB_DAN_CHIEU": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1
+    },
+    "VB_AP_DUNG": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0
+    },
+    "VB_GIAI_THICH": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0
+    },
+    "VB_DINH_CHI_THI_HANH": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0
+    },
+    "VB_QUY_DINH_TAM_NGUNG_GIA_HAN": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0
+    },
+    "PHAN": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0
+    },
+    "CHUONG": {
+      "precision": 0.6756756756756757,
+      "recall": 0.684931506849315,
+      "f1": 0.6802721088435374,
+      "tp": 50,
+      "fp": 24,
+      "fn": 23
+    },
+    "MUC": {
+      "precision": 0.21428571428571427,
+      "recall": 0.5,
+      "f1": 0.3,
+      "tp": 12,
+      "fp": 44,
+      "fn": 12
+    },
+    "TIEU_MUC": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0
+    },
+    "DIEU": {
+      "precision": 0.32171156893819336,
+      "recall": 0.3322422258592471,
+      "f1": 0.3268921095008051,
+      "tp": 203,
+      "fp": 428,
+      "fn": 408
+    },
+    "KHOAN": {
+      "precision": 0.8186763372620127,
+      "recall": 0.8733075435203095,
+      "f1": 0.8451099672437998,
+      "tp": 903,
+      "fp": 200,
+      "fn": 131
+    },
+    "DIEM": {
+      "precision": 0.8290993071593533,
+      "recall": 0.8734793187347932,
+      "f1": 0.8507109004739336,
+      "tp": 359,
+      "fp": 74,
+      "fn": 52
+    }
+  }
+}

@@ -1,0 +1,2 @@
+﻿task,precision_pct,recall_pct,f1_pct,tp,fp,fn
+NER exact-span/type,60.99967116080237,69.50168602472836,64.97373029772329,1855,1186,814

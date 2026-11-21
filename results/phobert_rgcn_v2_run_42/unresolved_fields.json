@@ -1,0 +1,334 @@
+[
+  {
+    "field": "[CHEN_HINH_PHAN_BO_NHAN_VA_DO_DAI_TU_LAN_CHAY_CHINH_THUC]",
+    "context": "[CHEN_HINH_PHAN_BO_NHAN_VA_DO_DAI_TU_LAN_CHAY_CHINH_THUC]"
+  },
+  {
+    "field": "[CHEN_ANH_TO_SANG_THUC_THE_TREN_DOCX_MOI_KEM_DOAN_NGUON]",
+    "context": "[CHEN_ANH_TO_SANG_THUC_THE_TREN_DOCX_MOI_KEM_DOAN_NGUON]"
+  },
+  {
+    "field": "[CHEN_DO_THI_QUAN_HE_DOCX_MOI_CO_NHAN_CANH_VA_GHI_RO_GIOI_HAN_HIEN_THI]",
+    "context": "[CHEN_DO_THI_QUAN_HE_DOCX_MOI_CO_NHAN_CANH_VA_GHI_RO_GIOI_HAN_HIEN_THI]"
+  },
+  {
+    "field": "[NGAY_CHOT_DU_LIEU]",
+    "context": "[NGAY_CHOT_DU_LIEU]"
+  },
+  {
+    "field": "[N_NGUON]",
+    "context": "[N_NGUON]"
+  },
+  {
+    "field": "[N_CO_TOAN_VAN]",
+    "context": "[N_CO_TOAN_VAN]"
+  },
+  {
+    "field": "[N_LOI_THU_THAP]",
+    "context": "[N_LOI_THU_THAP]"
+  },
+  {
+    "field": "[N_TAI_LIEU_HOP_LE]",
+    "context": "[N_TAI_LIEU_HOP_LE]"
+  },
+  {
+    "field": "[N_VB_KIEM_TRA_NHAN]",
+    "context": "[N_VB_KIEM_TRA_NHAN]"
+  },
+  {
+    "field": "[THONG_TIN_KIEM_TRA_NHAN]",
+    "context": "[THONG_TIN_KIEM_TRA_NHAN]"
+  },
+  {
+    "field": "[N_LOI_NER_DA_SUA]",
+    "context": "[N_LOI_NER_DA_SUA]"
+  },
+  {
+    "field": "[N_LOI_RE_DA_SUA]",
+    "context": "[N_LOI_RE_DA_SUA]"
+  },
+  {
+    "field": "[PHAM_VI_NHAN_TU_DONG]",
+    "context": "[PHAM_VI_NHAN_TU_DONG]"
+  },
+  {
+    "field": "[E_TRAIN]",
+    "context": "[E_TRAIN]"
+  },
+  {
+    "field": "[E_VAL]",
+    "context": "[E_VAL]"
+  },
+  {
+    "field": "[E_TEST]",
+    "context": "[E_TEST]"
+  },
+  {
+    "field": "[C_TRAIN]",
+    "context": "[C_TRAIN]"
+  },
+  {
+    "field": "[NGAY_CHAY]",
+    "context": "phobert_rgcn_v2_run_42 / [NGAY_CHAY]"
+  },
+  {
+    "field": "[VI_DU_NER_BO_SOT]",
+    "context": "[VI_DU_NER_BO_SOT]"
+  },
+  {
+    "field": "[VI_DU_NER_THUA]",
+    "context": "[VI_DU_NER_THUA]"
+  },
+  {
+    "field": "[N_NER_SAI_LOAI]",
+    "context": "[N_NER_SAI_LOAI]"
+  },
+  {
+    "field": "[VI_DU_NER_SAI_LOAI]",
+    "context": "[VI_DU_NER_SAI_LOAI]"
+  },
+  {
+    "field": "[N_NER_SAI_BIEN]",
+    "context": "[N_NER_SAI_BIEN]"
+  },
+  {
+    "field": "[VI_DU_NER_SAI_BIEN]",
+    "context": "[VI_DU_NER_SAI_BIEN]"
+  },
+  {
+    "field": "[MED_PAIRS_G]",
+    "context": "[MED_PAIRS_G]"
+  },
+  {
+    "field": "[MED_PAIRS_E2E]",
+    "context": "[MED_PAIRS_E2E]"
+  },
+  {
+    "field": "[N_RE_LOI_NER]",
+    "context": "[N_RE_LOI_NER]"
+  },
+  {
+    "field": "[N_RE_LOI_UNG_VIEN]",
+    "context": "[N_RE_LOI_UNG_VIEN]"
+  },
+  {
+    "field": "[N_RE_LOI_NHAN]",
+    "context": "[N_RE_LOI_NHAN]"
+  },
+  {
+    "field": "[N_RE_LOI_HUONG]",
+    "context": "[N_RE_LOI_HUONG]"
+  },
+  {
+    "field": "[N_RE_CAN_XAC_MINH]",
+    "context": "[N_RE_CAN_XAC_MINH]"
+  },
+  {
+    "field": "[TEN_DOCX_MOI]",
+    "context": "[TEN_DOCX_MOI]"
+  },
+  {
+    "field": "[PHAM_VI_KIEM_TRA]",
+    "context": "[PHAM_VI_KIEM_TRA]"
+  },
+  {
+    "field": "[NGUON_DOCX_MOI]",
+    "context": "[NGUON_DOCX_MOI]"
+  },
+  {
+    "field": "[NGUOI_KIEM_TRA]",
+    "context": "[NGUOI_KIEM_TRA]"
+  },
+  {
+    "field": "[CHECKPOINT_TEST_DOCX]",
+    "context": "[CHECKPOINT_TEST_DOCX] / [NGUONG_TEST_DOCX]"
+  },
+  {
+    "field": "[NGUONG_TEST_DOCX]",
+    "context": "[CHECKPOINT_TEST_DOCX] / [NGUONG_TEST_DOCX]"
+  },
+  {
+    "field": "[SPAN_DUNG_VA_CODE]",
+    "context": "[SPAN_DUNG_VA_CODE]"
+  },
+  {
+    "field": "[DOAN_NGUON_SPAN_DUNG]",
+    "context": "[DOAN_NGUON_SPAN_DUNG]"
+  },
+  {
+    "field": "[SPAN_SAI_VA_THAM_CHIEU]",
+    "context": "[SPAN_SAI_VA_THAM_CHIEU]"
+  },
+  {
+    "field": "[NGUYEN_NHAN_CAN_KIEM_TRA]",
+    "context": "[NGUYEN_NHAN_CAN_KIEM_TRA]"
+  },
+  {
+    "field": "[BO_BA_QUAN_HE_DUNG]",
+    "context": "[BO_BA_QUAN_HE_DUNG]"
+  },
+  {
+    "field": "[BANG_CHUNG_QUAN_HE_DUNG]",
+    "context": "[BANG_CHUNG_QUAN_HE_DUNG]"
+  },
+  {
+    "field": "[BO_BA_SAI_VA_THAM_CHIEU]",
+    "context": "[BO_BA_SAI_VA_THAM_CHIEU]"
+  },
+  {
+    "field": "[LOI_NER_UNG_VIEN_HAY_CLASSIFIER]",
+    "context": "[LOI_NER_UNG_VIEN_HAY_CLASSIFIER]"
+  },
+  {
+    "field": "[T_DOCX]",
+    "context": "[T_DOCX] giây"
+  },
+  {
+    "field": "[DO_DAI_VAN_BAN]",
+    "context": "[DO_DAI_VAN_BAN]"
+  },
+  {
+    "field": "[T_ENCODER]",
+    "context": "[T_ENCODER] / [T_CACHE] giây"
+  },
+  {
+    "field": "[T_CACHE]",
+    "context": "[T_ENCODER] / [T_CACHE] giây"
+  },
+  {
+    "field": "[SO_CUA_SO_THUC_TE]",
+    "context": "[SO_CUA_SO_THUC_TE]"
+  },
+  {
+    "field": "[T_NER]",
+    "context": "[T_NER] giây"
+  },
+  {
+    "field": "[SO_DON_VI_TU_VUNG]",
+    "context": "[SO_DON_VI_TU_VUNG]"
+  },
+  {
+    "field": "[T_RE]",
+    "context": "[T_RE] giây"
+  },
+  {
+    "field": "[SO_NUT_VA_CAP]",
+    "context": "[SO_NUT_VA_CAP]"
+  },
+  {
+    "field": "[T_EXPORT]",
+    "context": "[T_EXPORT] giây"
+  },
+  {
+    "field": "[PHAM_VI_HIEN_THI]",
+    "context": "[PHAM_VI_HIEN_THI]"
+  },
+  {
+    "field": "[VRAM_MAX]",
+    "context": "[VRAM_MAX] MB"
+  },
+  {
+    "field": "[THIET_BI_VA_CACH_DO]",
+    "context": "[THIET_BI_VA_CACH_DO]"
+  },
+  {
+    "field": "[TAI_LIEU_PHAM_VI]",
+    "context": "[TAI_LIEU_PHAM_VI]"
+  },
+  {
+    "field": "[CAU_HINH_SUY_LUAN]",
+    "context": "[CAU_HINH_SUY_LUAN]"
+  },
+  {
+    "field": "[N_SPAN_KIEM_TRA]",
+    "context": "[N_SPAN_KIEM_TRA]"
+  },
+  {
+    "field": "[N_QUAN_HE_KIEM_TRA]",
+    "context": "[N_QUAN_HE_KIEM_TRA]"
+  },
+  {
+    "field": "[NGUOI_VA_NGAY_KIEM_TRA]",
+    "context": "[NGUOI_VA_NGAY_KIEM_TRA]"
+  },
+  {
+    "field": "[DOAN_NGUON]",
+    "context": "[DOAN_NGUON]"
+  },
+  {
+    "field": "[DU_DOAN]",
+    "context": "[DU_DOAN]"
+  },
+  {
+    "field": "[THAM_CHIEU]",
+    "context": "[THAM_CHIEU]"
+  },
+  {
+    "field": "[NHAN_XET]",
+    "context": "[NHAN_XET]"
+  },
+  {
+    "field": "[DOAN_NGUON]",
+    "context": "[DOAN_NGUON]"
+  },
+  {
+    "field": "[DU_DOAN]",
+    "context": "[DU_DOAN]"
+  },
+  {
+    "field": "[THAM_CHIEU]",
+    "context": "[THAM_CHIEU]"
+  },
+  {
+    "field": "[NHAN_XET]",
+    "context": "[NHAN_XET]"
+  },
+  {
+    "field": "[DOAN_NGUON]",
+    "context": "[DOAN_NGUON]"
+  },
+  {
+    "field": "[DU_DOAN]",
+    "context": "[DU_DOAN]"
+  },
+  {
+    "field": "[THAM_CHIEU]",
+    "context": "[THAM_CHIEU]"
+  },
+  {
+    "field": "[NHAN_XET]",
+    "context": "[NHAN_XET]"
+  },
+  {
+    "field": "[DOAN_NGUON]",
+    "context": "[DOAN_NGUON]"
+  },
+  {
+    "field": "[DU_DOAN]",
+    "context": "[DU_DOAN]"
+  },
+  {
+    "field": "[THAM_CHIEU]",
+    "context": "[THAM_CHIEU]"
+  },
+  {
+    "field": "[NHAN_XET]",
+    "context": "[NHAN_XET]"
+  },
+  {
+    "field": "[DOAN_NGUON]",
+    "context": "[DOAN_NGUON]"
+  },
+  {
+    "field": "[DU_DOAN]",
+    "context": "[DU_DOAN]"
+  },
+  {
+    "field": "[THAM_CHIEU]",
+    "context": "[THAM_CHIEU]"
+  },
+  {
+    "field": "[NHAN_XET]",
+    "context": "[NHAN_XET]"
+  }
+]

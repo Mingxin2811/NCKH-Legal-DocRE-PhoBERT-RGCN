@@ -1,0 +1,11 @@
+{
+  "metrics_recomputed_from_counts": "passed",
+  "ner_appendix_rows": 40,
+  "re_appendix_rows": 22,
+  "github_hyperlinks": "passed",
+  "python_tests": {
+    "passed": 27,
+    "failed": 0
+  },
+  "source_files": 33
+}

@@ -1,0 +1,8 @@
+{
+  "torch": "2.14.1+cu130",
+  "torch-geometric": "2.8.1",
+  "transformers": "5.22.1",
+  "pyvi": "0.1.1",
+  "numpy": "2.4.6",
+  "scikit-learn": "1.6.1"
+}

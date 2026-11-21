@@ -1,0 +1,2777 @@
+[
+  {
+    "location": "Kết quả thực nghiệm chính thức được cập nhật tại Chương 6: NER F1 = 64,97%; RE toàn quy trình micro-F1 = [F1_RE_KET_LUAN]%; macro-F1 trên 22 nhãn = [MACRO_RE_KET_LUAN]%. Chênh lệch micro-F1 giữa cấu hình PhoBERT–RGCN và semantic là [CHENH_LECH_DIEM_PHAN_TRAM] điểm phần trăm. Các vị trí này chưa phải kết quả thực đo trong bản chờ cập nhật.",
+    "field": "F1_NER_KET_LUAN",
+    "value": "64,97",
+    "source": "ner_test.json: f1"
+  },
+  {
+    "location": "Kết quả thực nghiệm chính thức được cập nhật tại Chương 6: NER F1 = 64,97%; RE toàn quy trình micro-F1 = 19,02%; macro-F1 trên 22 nhãn = [MACRO_RE_KET_LUAN]%. Chênh lệch micro-F1 giữa cấu hình PhoBERT–RGCN và semantic là [CHENH_LECH_DIEM_PHAN_TRAM] điểm phần trăm. Các vị trí này chưa phải kết quả thực đo trong bản chờ cập nhật.",
+    "field": "F1_RE_KET_LUAN",
+    "value": "19,02",
+    "source": "test_rgcn.json: predicted_entities_end_to_end.f1_micro_positive"
+  },
+  {
+    "location": "Kết quả thực nghiệm chính thức được cập nhật tại Chương 6: NER F1 = 64,97%; RE toàn quy trình micro-F1 = 19,02%; macro-F1 trên 22 nhãn = 1,82%. Chênh lệch micro-F1 giữa cấu hình PhoBERT–RGCN và semantic là [CHENH_LECH_DIEM_PHAN_TRAM] điểm phần trăm. Các vị trí này chưa phải kết quả thực đo trong bản chờ cập nhật.",
+    "field": "MACRO_RE_KET_LUAN",
+    "value": "1,82",
+    "source": "test_rgcn.json: predicted_entities_end_to_end.f1_macro_22"
+  },
+  {
+    "location": "Kết quả thực nghiệm chính thức được cập nhật tại Chương 6: NER F1 = 64,97%; RE toàn quy trình micro-F1 = 19,02%; macro-F1 trên 22 nhãn = 1,82%. Chênh lệch micro-F1 giữa cấu hình PhoBERT–RGCN và semantic là 1,76 điểm phần trăm. Các vị trí này chưa phải kết quả thực đo trong bản chờ cập nhật.",
+    "field": "CHENH_LECH_DIEM_PHAN_TRAM",
+    "value": "1,76",
+    "source": "comparison.csv: RGCN E2E trừ semantic E2E, tính trước làm tròn"
+  },
+  {
+    "location": "263",
+    "field": "N_TRAIN",
+    "value": "263",
+    "source": "split_summary.json: counts"
+  },
+  {
+    "location": "56",
+    "field": "N_VAL",
+    "value": "56",
+    "source": "split_summary.json: counts"
+  },
+  {
+    "location": "57",
+    "field": "N_TEST",
+    "value": "57",
+    "source": "split_summary.json: counts"
+  },
+  {
+    "location": "376",
+    "field": "N_ALL",
+    "value": "376",
+    "source": "split_summary.json: counts"
+  },
+  {
+    "location": "69,95",
+    "field": "TY_LE_TRAIN",
+    "value": "69,95",
+    "source": "split_summary.json: counts; tỷ lệ tính lại trên 376 tài liệu"
+  },
+  {
+    "location": "14,89",
+    "field": "TY_LE_VAL",
+    "value": "14,89",
+    "source": "split_summary.json: counts; tỷ lệ tính lại trên 376 tài liệu"
+  },
+  {
+    "location": "15,16",
+    "field": "TY_LE_TEST",
+    "value": "15,16",
+    "source": "split_summary.json: counts; tỷ lệ tính lại trên 376 tài liệu"
+  },
+  {
+    "location": "53482",
+    "field": "E_ALL",
+    "value": "53482",
+    "source": "data_audit.json: totals.retained_entities"
+  },
+  {
+    "location": "34982",
+    "field": "R_TRAIN",
+    "value": "34982",
+    "source": "split_relation_support.json: train (tổng số bộ ba)"
+  },
+  {
+    "location": "12692",
+    "field": "R_VAL",
+    "value": "12692",
+    "source": "split_relation_support.json: val (tổng số bộ ba)"
+  },
+  {
+    "location": "2147",
+    "field": "R_TEST",
+    "value": "2147",
+    "source": "split_relation_support.json: test (tổng số bộ ba)"
+  },
+  {
+    "location": "49821",
+    "field": "R_ALL",
+    "value": "49821",
+    "source": "data_audit.json: totals.retained_relations"
+  },
+  {
+    "location": "24",
+    "field": "C_VAL",
+    "value": "24",
+    "source": "selected_checkpoints.json: ner.validation.per_type; đếm lớp có gold"
+  },
+  {
+    "location": "22",
+    "field": "C_TEST",
+    "value": "22",
+    "source": "ner_test.json: per_type; đếm lớp có gold"
+  },
+  {
+    "location": "29",
+    "field": "C_ALL",
+    "value": "29",
+    "source": "data_audit.json: entity_counts (số CODE có mẫu)"
+  },
+  {
+    "location": "12",
+    "field": "L_TRAIN",
+    "value": "12",
+    "source": "split_relation_support.json: train (số lớp có mẫu)"
+  },
+  {
+    "location": "8",
+    "field": "L_VAL",
+    "value": "8",
+    "source": "split_relation_support.json: val (số lớp có mẫu)"
+  },
+  {
+    "location": "8",
+    "field": "L_TEST",
+    "value": "8",
+    "source": "split_relation_support.json: test (số lớp có mẫu)"
+  },
+  {
+    "location": "12",
+    "field": "L_ALL",
+    "value": "12",
+    "source": "data_audit.json: relation_counts (số CODE có mẫu)"
+  },
+  {
+    "location": "phobert_rgcn_v2_run_42 / [NGAY_CHAY]",
+    "field": "RUN_ID",
+    "value": "phobert_rgcn_v2_run_42",
+    "source": "run_config.json: output"
+  },
+  {
+    "location": "raw-doc-v2 / [SPLIT_ID]",
+    "field": "DATA_VERSION",
+    "value": "raw-doc-v2",
+    "source": "data_audit.json: version"
+  },
+  {
+    "location": "raw-doc-v2 / split_manifest.json; seed 42",
+    "field": "SPLIT_ID",
+    "value": "split_manifest.json; seed 42",
+    "source": "split_manifest.json; split_summary.json"
+  },
+  {
+    "location": "Tesla T4 (CUDA)",
+    "field": "THIET_BI_THUC_TE",
+    "value": "Tesla T4 (CUDA)",
+    "source": "run_status.json: device/device_name"
+  },
+  {
+    "location": "PyTorch 2.14.1+cu130; Transformers 5.22.1; PyG 2.8.1",
+    "field": "PHIEN_BAN_MOI_TRUONG",
+    "value": "PyTorch 2.14.1+cu130; Transformers 5.22.1; PyG 2.8.1",
+    "source": "environment.json; không có phiên bản Python"
+  },
+  {
+    "location": "42; 1 seed (42)",
+    "field": "SO_LAN_LAP",
+    "value": "1 seed (42)",
+    "source": "run_config.json: seed; gói chỉ có một lần chạy"
+  },
+  {
+    "location": "checkpoints/ner.pt (epoch 18; ngưỡng 0,80) / [CHECKPOINT_RE]",
+    "field": "CHECKPOINT_NER",
+    "value": "checkpoints/ner.pt (epoch 18; ngưỡng 0,80)",
+    "source": "selected_checkpoints.json: ner"
+  },
+  {
+    "location": "checkpoints/ner.pt (epoch 18; ngưỡng 0,80) / checkpoints/relation_rgcn.pt (epoch 15; ngưỡng 0,80)",
+    "field": "CHECKPOINT_RE",
+    "value": "checkpoints/relation_rgcn.pt (epoch 15; ngưỡng 0,80)",
+    "source": "selected_checkpoints.json: relation_rgcn"
+  },
+  {
+    "location": "18 / [EPOCH_NER_DA_CHAY]",
+    "field": "EPOCH_NER_TOT_NHAT",
+    "value": "18",
+    "source": "selected_checkpoints.json: ner.epoch"
+  },
+  {
+    "location": "18 / 20",
+    "field": "EPOCH_NER_DA_CHAY",
+    "value": "20",
+    "source": "ner_history.json"
+  },
+  {
+    "location": "0,80",
+    "field": "NGUONG_NER",
+    "value": "0,80",
+    "source": "selected_checkpoints.json: ner.threshold"
+  },
+  {
+    "location": "0,002204",
+    "field": "LOSS_NER",
+    "value": "0,002204",
+    "source": "ner_history.json: epoch 18, loss"
+  },
+  {
+    "location": "72,50",
+    "field": "F1_NER_VAL",
+    "value": "72,50",
+    "source": "selected_checkpoints.json: ner.validation.f1"
+  },
+  {
+    "location": "61,00",
+    "field": "P_NER_TEST",
+    "value": "61,00",
+    "source": "ner_test.json: precision"
+  },
+  {
+    "location": "69,50",
+    "field": "R_NER_TEST",
+    "value": "69,50",
+    "source": "ner_test.json: recall"
+  },
+  {
+    "location": "64,97",
+    "field": "F1_NER_TEST",
+    "value": "64,97",
+    "source": "ner_test.json: f1"
+  },
+  {
+    "location": "2669",
+    "field": "SUPPORT_NER_TEST",
+    "value": "2669",
+    "source": "ner_test.json: tp + fn"
+  },
+  {
+    "location": "407",
+    "field": "G_META",
+    "value": "407",
+    "source": "ner_test.json: per_type; cộng nhóm TEN_VAN_BAN,SO_HIEU,LOAI_VAN_BAN,NGANH,NGAY_BAN_HANH,LINH_VUC,NGAY_CO_HIEU_LUC,NGAY_HET_HIEU_LUC,TINH_TRANG_HIEU_LUC,CO_QUAN_BAN_HANH,CHUC_DANH,NGUOI_KY"
+  },
+  {
+    "location": "298",
+    "field": "TP_META",
+    "value": "298",
+    "source": "ner_test.json: per_type; cộng nhóm TEN_VAN_BAN,SO_HIEU,LOAI_VAN_BAN,NGANH,NGAY_BAN_HANH,LINH_VUC,NGAY_CO_HIEU_LUC,NGAY_HET_HIEU_LUC,TINH_TRANG_HIEU_LUC,CO_QUAN_BAN_HANH,CHUC_DANH,NGUOI_KY"
+  },
+  {
+    "location": "284",
+    "field": "FP_META",
+    "value": "284",
+    "source": "ner_test.json: per_type; cộng nhóm TEN_VAN_BAN,SO_HIEU,LOAI_VAN_BAN,NGANH,NGAY_BAN_HANH,LINH_VUC,NGAY_CO_HIEU_LUC,NGAY_HET_HIEU_LUC,TINH_TRANG_HIEU_LUC,CO_QUAN_BAN_HANH,CHUC_DANH,NGUOI_KY"
+  },
+  {
+    "location": "109",
+    "field": "FN_META",
+    "value": "109",
+    "source": "ner_test.json: per_type; cộng nhóm TEN_VAN_BAN,SO_HIEU,LOAI_VAN_BAN,NGANH,NGAY_BAN_HANH,LINH_VUC,NGAY_CO_HIEU_LUC,NGAY_HET_HIEU_LUC,TINH_TRANG_HIEU_LUC,CO_QUAN_BAN_HANH,CHUC_DANH,NGUOI_KY"
+  },
+  {
+    "location": "60,26",
+    "field": "F1_META",
+    "value": "60,26",
+    "source": "ner_test.json: per_type; cộng nhóm TEN_VAN_BAN,SO_HIEU,LOAI_VAN_BAN,NGANH,NGAY_BAN_HANH,LINH_VUC,NGAY_CO_HIEU_LUC,NGAY_HET_HIEU_LUC,TINH_TRANG_HIEU_LUC,CO_QUAN_BAN_HANH,CHUC_DANH,NGUOI_KY"
+  },
+  {
+    "location": "2153",
+    "field": "G_STRUCT",
+    "value": "2153",
+    "source": "ner_test.json: per_type; cộng nhóm PHAN,CHUONG,MUC,TIEU_MUC,DIEU,KHOAN,DIEM"
+  },
+  {
+    "location": "1527",
+    "field": "TP_STRUCT",
+    "value": "1527",
+    "source": "ner_test.json: per_type; cộng nhóm PHAN,CHUONG,MUC,TIEU_MUC,DIEU,KHOAN,DIEM"
+  },
+  {
+    "location": "770",
+    "field": "FP_STRUCT",
+    "value": "770",
+    "source": "ner_test.json: per_type; cộng nhóm PHAN,CHUONG,MUC,TIEU_MUC,DIEU,KHOAN,DIEM"
+  },
+  {
+    "location": "626",
+    "field": "FN_STRUCT",
+    "value": "626",
+    "source": "ner_test.json: per_type; cộng nhóm PHAN,CHUONG,MUC,TIEU_MUC,DIEU,KHOAN,DIEM"
+  },
+  {
+    "location": "68,63",
+    "field": "F1_STRUCT",
+    "value": "68,63",
+    "source": "ner_test.json: per_type; cộng nhóm PHAN,CHUONG,MUC,TIEU_MUC,DIEU,KHOAN,DIEM"
+  },
+  {
+    "location": "109",
+    "field": "G_REF",
+    "value": "109",
+    "source": "ner_test.json: per_type; cộng nhóm VB_DUOC_HUONG_DAN_AP_DUNG,VB_DUOC_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH,VB_BI_TAC_DONG_HIEU_LUC_MOT_PHAN,VB_BI_TAC_DONG_HIEU_LUC_TOAN_BO,VB_DUOC_DINH_CHINH,VB_DUOC_DAN_CHIEU,CAN_CU_BAN_HANH,VB_DUOC_GIAI_THICH,VB_BI_DINH_CHI_THI_HANH,VB_BI_TAM_NGUNG_GIA_HAN,VB_HUONG_DAN_AP_DUNG,VB_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH,VB_QUY_DINH_HET_HIEU_LUC_MOT_PHAN,VB_QUY_DINH_HET_HIEU_LUC_TOAN_BO,VB_HOP_NHAT,VB_DINH_CHINH,VB_DAN_CHIEU,VB_AP_DUNG,VB_GIAI_THICH,VB_DINH_CHI_THI_HANH,VB_QUY_DINH_TAM_NGUNG_GIA_HAN"
+  },
+  {
+    "location": "30",
+    "field": "TP_REF",
+    "value": "30",
+    "source": "ner_test.json: per_type; cộng nhóm VB_DUOC_HUONG_DAN_AP_DUNG,VB_DUOC_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH,VB_BI_TAC_DONG_HIEU_LUC_MOT_PHAN,VB_BI_TAC_DONG_HIEU_LUC_TOAN_BO,VB_DUOC_DINH_CHINH,VB_DUOC_DAN_CHIEU,CAN_CU_BAN_HANH,VB_DUOC_GIAI_THICH,VB_BI_DINH_CHI_THI_HANH,VB_BI_TAM_NGUNG_GIA_HAN,VB_HUONG_DAN_AP_DUNG,VB_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH,VB_QUY_DINH_HET_HIEU_LUC_MOT_PHAN,VB_QUY_DINH_HET_HIEU_LUC_TOAN_BO,VB_HOP_NHAT,VB_DINH_CHINH,VB_DAN_CHIEU,VB_AP_DUNG,VB_GIAI_THICH,VB_DINH_CHI_THI_HANH,VB_QUY_DINH_TAM_NGUNG_GIA_HAN"
+  },
+  {
+    "location": "132",
+    "field": "FP_REF",
+    "value": "132",
+    "source": "ner_test.json: per_type; cộng nhóm VB_DUOC_HUONG_DAN_AP_DUNG,VB_DUOC_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH,VB_BI_TAC_DONG_HIEU_LUC_MOT_PHAN,VB_BI_TAC_DONG_HIEU_LUC_TOAN_BO,VB_DUOC_DINH_CHINH,VB_DUOC_DAN_CHIEU,CAN_CU_BAN_HANH,VB_DUOC_GIAI_THICH,VB_BI_DINH_CHI_THI_HANH,VB_BI_TAM_NGUNG_GIA_HAN,VB_HUONG_DAN_AP_DUNG,VB_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH,VB_QUY_DINH_HET_HIEU_LUC_MOT_PHAN,VB_QUY_DINH_HET_HIEU_LUC_TOAN_BO,VB_HOP_NHAT,VB_DINH_CHINH,VB_DAN_CHIEU,VB_AP_DUNG,VB_GIAI_THICH,VB_DINH_CHI_THI_HANH,VB_QUY_DINH_TAM_NGUNG_GIA_HAN"
+  },
+  {
+    "location": "79",
+    "field": "FN_REF",
+    "value": "79",
+    "source": "ner_test.json: per_type; cộng nhóm VB_DUOC_HUONG_DAN_AP_DUNG,VB_DUOC_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH,VB_BI_TAC_DONG_HIEU_LUC_MOT_PHAN,VB_BI_TAC_DONG_HIEU_LUC_TOAN_BO,VB_DUOC_DINH_CHINH,VB_DUOC_DAN_CHIEU,CAN_CU_BAN_HANH,VB_DUOC_GIAI_THICH,VB_BI_DINH_CHI_THI_HANH,VB_BI_TAM_NGUNG_GIA_HAN,VB_HUONG_DAN_AP_DUNG,VB_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH,VB_QUY_DINH_HET_HIEU_LUC_MOT_PHAN,VB_QUY_DINH_HET_HIEU_LUC_TOAN_BO,VB_HOP_NHAT,VB_DINH_CHINH,VB_DAN_CHIEU,VB_AP_DUNG,VB_GIAI_THICH,VB_DINH_CHI_THI_HANH,VB_QUY_DINH_TAM_NGUNG_GIA_HAN"
+  },
+  {
+    "location": "22,14",
+    "field": "F1_REF",
+    "value": "22,14",
+    "source": "ner_test.json: per_type; cộng nhóm VB_DUOC_HUONG_DAN_AP_DUNG,VB_DUOC_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH,VB_BI_TAC_DONG_HIEU_LUC_MOT_PHAN,VB_BI_TAC_DONG_HIEU_LUC_TOAN_BO,VB_DUOC_DINH_CHINH,VB_DUOC_DAN_CHIEU,CAN_CU_BAN_HANH,VB_DUOC_GIAI_THICH,VB_BI_DINH_CHI_THI_HANH,VB_BI_TAM_NGUNG_GIA_HAN,VB_HUONG_DAN_AP_DUNG,VB_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH,VB_QUY_DINH_HET_HIEU_LUC_MOT_PHAN,VB_QUY_DINH_HET_HIEU_LUC_TOAN_BO,VB_HOP_NHAT,VB_DINH_CHINH,VB_DAN_CHIEU,VB_AP_DUNG,VB_GIAI_THICH,VB_DINH_CHI_THI_HANH,VB_QUY_DINH_TAM_NGUNG_GIA_HAN"
+  },
+  {
+    "location": "814",
+    "field": "N_NER_BO_SOT",
+    "value": "814",
+    "source": "ner_test.json: fn (tổng lỗi exact-span, chưa tách nguyên nhân)"
+  },
+  {
+    "location": "1186",
+    "field": "N_NER_THUA",
+    "value": "1186",
+    "source": "ner_test.json: fp (tổng lỗi exact-span, chưa tách nguyên nhân)"
+  },
+  {
+    "location": "49,75",
+    "field": "P_SEM_G",
+    "value": "49,75",
+    "source": "test_semantic.json: gold_entities.precision_micro_positive; comparison.csv"
+  },
+  {
+    "location": "50,49",
+    "field": "R_SEM_G",
+    "value": "50,49",
+    "source": "test_semantic.json: gold_entities.recall_micro_positive; comparison.csv"
+  },
+  {
+    "location": "50,12",
+    "field": "F1_SEM_G",
+    "value": "50,12",
+    "source": "test_semantic.json: gold_entities.f1_micro_positive; comparison.csv"
+  },
+  {
+    "location": "12,00",
+    "field": "MACRO_SEM_G",
+    "value": "12,00",
+    "source": "test_semantic.json: gold_entities.f1_macro_22; comparison.csv"
+  },
+  {
+    "location": "51,55",
+    "field": "P_GNN_G",
+    "value": "51,55",
+    "source": "test_rgcn.json: gold_entities.precision_micro_positive; comparison.csv"
+  },
+  {
+    "location": "54,35",
+    "field": "R_GNN_G",
+    "value": "54,35",
+    "source": "test_rgcn.json: gold_entities.recall_micro_positive; comparison.csv"
+  },
+  {
+    "location": "52,91",
+    "field": "F1_GNN_G",
+    "value": "52,91",
+    "source": "test_rgcn.json: gold_entities.f1_micro_positive; comparison.csv"
+  },
+  {
+    "location": "17,10",
+    "field": "MACRO_GNN_G",
+    "value": "17,10",
+    "source": "test_rgcn.json: gold_entities.f1_macro_22; comparison.csv"
+  },
+  {
+    "location": "15,42",
+    "field": "P_SEM_E2E",
+    "value": "15,42",
+    "source": "test_semantic.json: predicted_entities_end_to_end.precision_micro_positive; comparison.csv"
+  },
+  {
+    "location": "19,61",
+    "field": "R_SEM_E2E",
+    "value": "19,61",
+    "source": "test_semantic.json: predicted_entities_end_to_end.recall_micro_positive; comparison.csv"
+  },
+  {
+    "location": "17,26",
+    "field": "F1_SEM_E2E",
+    "value": "17,26",
+    "source": "test_semantic.json: predicted_entities_end_to_end.f1_micro_positive; comparison.csv"
+  },
+  {
+    "location": "2,32",
+    "field": "MACRO_SEM_E2E",
+    "value": "2,32",
+    "source": "test_semantic.json: predicted_entities_end_to_end.f1_macro_22; comparison.csv"
+  },
+  {
+    "location": "17,79",
+    "field": "P_GNN_E2E",
+    "value": "17,79",
+    "source": "test_rgcn.json: predicted_entities_end_to_end.precision_micro_positive; comparison.csv"
+  },
+  {
+    "location": "20,45",
+    "field": "R_GNN_E2E",
+    "value": "20,45",
+    "source": "test_rgcn.json: predicted_entities_end_to_end.recall_micro_positive; comparison.csv"
+  },
+  {
+    "location": "19,02",
+    "field": "F1_GNN_E2E",
+    "value": "19,02",
+    "source": "test_rgcn.json: predicted_entities_end_to_end.f1_micro_positive; comparison.csv"
+  },
+  {
+    "location": "1,82",
+    "field": "MACRO_GNN_E2E",
+    "value": "1,82",
+    "source": "test_rgcn.json: predicted_entities_end_to_end.f1_macro_22; comparison.csv"
+  },
+  {
+    "location": "30",
+    "field": "EPOCH_SEM",
+    "value": "30",
+    "source": "selected_checkpoints.json: relation_semantic; relation_semantic_history.json: epoch 30"
+  },
+  {
+    "location": "15",
+    "field": "EPOCH_GNN",
+    "value": "15",
+    "source": "selected_checkpoints.json: relation_rgcn; relation_rgcn_history.json: epoch 15"
+  },
+  {
+    "location": "0,8",
+    "field": "TAU_SEM",
+    "value": "0,8",
+    "source": "selected_checkpoints.json: relation_semantic; relation_semantic_history.json: epoch 30"
+  },
+  {
+    "location": "0,8",
+    "field": "TAU_GNN",
+    "value": "0,8",
+    "source": "selected_checkpoints.json: relation_rgcn; relation_rgcn_history.json: epoch 15"
+  },
+  {
+    "location": "29,69",
+    "field": "F1_VAL_SEM",
+    "value": "29,69",
+    "source": "selected_checkpoints.json: relation_semantic; relation_semantic_history.json: epoch 30"
+  },
+  {
+    "location": "30,88",
+    "field": "F1_VAL_GNN",
+    "value": "30,88",
+    "source": "selected_checkpoints.json: relation_rgcn; relation_rgcn_history.json: epoch 15"
+  },
+  {
+    "location": "0,003634",
+    "field": "LOSS_SEM",
+    "value": "0,003634",
+    "source": "selected_checkpoints.json: relation_semantic; relation_semantic_history.json: epoch 30"
+  },
+  {
+    "location": "0,003668",
+    "field": "LOSS_GNN",
+    "value": "0,003668",
+    "source": "selected_checkpoints.json: relation_rgcn; relation_rgcn_history.json: epoch 15"
+  },
+  {
+    "location": "85,47",
+    "field": "CAND_RECALL_G",
+    "value": "85,47",
+    "source": "test_rgcn.json: gold_entities.candidate_recall"
+  },
+  {
+    "location": "312",
+    "field": "MISSED_CAND_G",
+    "value": "312",
+    "source": "test_rgcn.json: gold_entities; tổng support × (1 - candidate_recall); kiểm tra khớp số nguyên"
+  },
+  {
+    "location": "31,53",
+    "field": "CAND_RECALL_E2E",
+    "value": "31,53",
+    "source": "test_rgcn.json: predicted_entities_end_to_end.candidate_recall"
+  },
+  {
+    "location": "1470",
+    "field": "MISSED_CAND_E2E",
+    "value": "1470",
+    "source": "test_rgcn.json: predicted_entities_end_to_end; tổng support × (1 - candidate_recall); kiểm tra khớp số nguyên"
+  },
+  {
+    "location": "Table index 33, row 1, col 1",
+    "value": "59",
+    "source": "ner_test.json: per_type.TEN_VAN_BAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 1, col 2",
+    "value": "36",
+    "source": "ner_test.json: per_type.TEN_VAN_BAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 1, col 3",
+    "value": "34",
+    "source": "ner_test.json: per_type.TEN_VAN_BAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 1, col 4",
+    "value": "23",
+    "source": "ner_test.json: per_type.TEN_VAN_BAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 1, col 5",
+    "value": "51,43",
+    "source": "ner_test.json: per_type.TEN_VAN_BAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 1, col 6",
+    "value": "61,02",
+    "source": "ner_test.json: per_type.TEN_VAN_BAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 1, col 7",
+    "value": "55,81",
+    "source": "ner_test.json: per_type.TEN_VAN_BAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 2, col 1",
+    "value": "57",
+    "source": "ner_test.json: per_type.SO_HIEU; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 2, col 2",
+    "value": "53",
+    "source": "ner_test.json: per_type.SO_HIEU; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 2, col 3",
+    "value": "44",
+    "source": "ner_test.json: per_type.SO_HIEU; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 2, col 4",
+    "value": "4",
+    "source": "ner_test.json: per_type.SO_HIEU; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 2, col 5",
+    "value": "54,64",
+    "source": "ner_test.json: per_type.SO_HIEU; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 2, col 6",
+    "value": "92,98",
+    "source": "ner_test.json: per_type.SO_HIEU; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 2, col 7",
+    "value": "68,83",
+    "source": "ner_test.json: per_type.SO_HIEU; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 3, col 1",
+    "value": "57",
+    "source": "ner_test.json: per_type.LOAI_VAN_BAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 3, col 2",
+    "value": "45",
+    "source": "ner_test.json: per_type.LOAI_VAN_BAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 3, col 3",
+    "value": "46",
+    "source": "ner_test.json: per_type.LOAI_VAN_BAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 3, col 4",
+    "value": "12",
+    "source": "ner_test.json: per_type.LOAI_VAN_BAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 3, col 5",
+    "value": "49,45",
+    "source": "ner_test.json: per_type.LOAI_VAN_BAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 3, col 6",
+    "value": "78,95",
+    "source": "ner_test.json: per_type.LOAI_VAN_BAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 3, col 7",
+    "value": "60,81",
+    "source": "ner_test.json: per_type.LOAI_VAN_BAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 4, col 1",
+    "value": "2",
+    "source": "ner_test.json: per_type.NGANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 4, col 2",
+    "value": "0",
+    "source": "ner_test.json: per_type.NGANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 4, col 3",
+    "value": "3",
+    "source": "ner_test.json: per_type.NGANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 4, col 4",
+    "value": "2",
+    "source": "ner_test.json: per_type.NGANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 4, col 5",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.NGANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 4, col 6",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.NGANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 4, col 7",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.NGANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 5, col 1",
+    "value": "54",
+    "source": "ner_test.json: per_type.NGAY_BAN_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 5, col 2",
+    "value": "48",
+    "source": "ner_test.json: per_type.NGAY_BAN_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 5, col 3",
+    "value": "10",
+    "source": "ner_test.json: per_type.NGAY_BAN_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 5, col 4",
+    "value": "6",
+    "source": "ner_test.json: per_type.NGAY_BAN_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 5, col 5",
+    "value": "82,76",
+    "source": "ner_test.json: per_type.NGAY_BAN_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 5, col 6",
+    "value": "88,89",
+    "source": "ner_test.json: per_type.NGAY_BAN_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 5, col 7",
+    "value": "85,71",
+    "source": "ner_test.json: per_type.NGAY_BAN_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 6, col 1",
+    "value": "0",
+    "source": "ner_test.json: per_type.LINH_VUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 6, col 2",
+    "value": "0",
+    "source": "ner_test.json: per_type.LINH_VUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 6, col 3",
+    "value": "0",
+    "source": "ner_test.json: per_type.LINH_VUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 6, col 4",
+    "value": "0",
+    "source": "ner_test.json: per_type.LINH_VUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 6, col 5",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.LINH_VUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 6, col 6",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.LINH_VUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 6, col 7",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.LINH_VUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 7, col 1",
+    "value": "27",
+    "source": "ner_test.json: per_type.NGAY_CO_HIEU_LUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 7, col 2",
+    "value": "15",
+    "source": "ner_test.json: per_type.NGAY_CO_HIEU_LUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 7, col 3",
+    "value": "52",
+    "source": "ner_test.json: per_type.NGAY_CO_HIEU_LUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 7, col 4",
+    "value": "12",
+    "source": "ner_test.json: per_type.NGAY_CO_HIEU_LUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 7, col 5",
+    "value": "22,39",
+    "source": "ner_test.json: per_type.NGAY_CO_HIEU_LUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 7, col 6",
+    "value": "55,56",
+    "source": "ner_test.json: per_type.NGAY_CO_HIEU_LUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 7, col 7",
+    "value": "31,91",
+    "source": "ner_test.json: per_type.NGAY_CO_HIEU_LUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 8, col 1",
+    "value": "1",
+    "source": "ner_test.json: per_type.NGAY_HET_HIEU_LUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 8, col 2",
+    "value": "0",
+    "source": "ner_test.json: per_type.NGAY_HET_HIEU_LUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 8, col 3",
+    "value": "0",
+    "source": "ner_test.json: per_type.NGAY_HET_HIEU_LUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 8, col 4",
+    "value": "1",
+    "source": "ner_test.json: per_type.NGAY_HET_HIEU_LUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 8, col 5",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.NGAY_HET_HIEU_LUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 8, col 6",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.NGAY_HET_HIEU_LUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 8, col 7",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.NGAY_HET_HIEU_LUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 9, col 1",
+    "value": "0",
+    "source": "ner_test.json: per_type.TINH_TRANG_HIEU_LUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 9, col 2",
+    "value": "0",
+    "source": "ner_test.json: per_type.TINH_TRANG_HIEU_LUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 9, col 3",
+    "value": "0",
+    "source": "ner_test.json: per_type.TINH_TRANG_HIEU_LUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 9, col 4",
+    "value": "0",
+    "source": "ner_test.json: per_type.TINH_TRANG_HIEU_LUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 9, col 5",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.TINH_TRANG_HIEU_LUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 9, col 6",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.TINH_TRANG_HIEU_LUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 9, col 7",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.TINH_TRANG_HIEU_LUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 10, col 1",
+    "value": "51",
+    "source": "ner_test.json: per_type.CO_QUAN_BAN_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 10, col 2",
+    "value": "40",
+    "source": "ner_test.json: per_type.CO_QUAN_BAN_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 10, col 3",
+    "value": "35",
+    "source": "ner_test.json: per_type.CO_QUAN_BAN_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 10, col 4",
+    "value": "11",
+    "source": "ner_test.json: per_type.CO_QUAN_BAN_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 10, col 5",
+    "value": "53,33",
+    "source": "ner_test.json: per_type.CO_QUAN_BAN_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 10, col 6",
+    "value": "78,43",
+    "source": "ner_test.json: per_type.CO_QUAN_BAN_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 10, col 7",
+    "value": "63,49",
+    "source": "ner_test.json: per_type.CO_QUAN_BAN_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 11, col 1",
+    "value": "50",
+    "source": "ner_test.json: per_type.CHUC_DANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 11, col 2",
+    "value": "27",
+    "source": "ner_test.json: per_type.CHUC_DANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 11, col 3",
+    "value": "45",
+    "source": "ner_test.json: per_type.CHUC_DANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 11, col 4",
+    "value": "23",
+    "source": "ner_test.json: per_type.CHUC_DANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 11, col 5",
+    "value": "37,50",
+    "source": "ner_test.json: per_type.CHUC_DANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 11, col 6",
+    "value": "54,00",
+    "source": "ner_test.json: per_type.CHUC_DANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 11, col 7",
+    "value": "44,26",
+    "source": "ner_test.json: per_type.CHUC_DANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 12, col 1",
+    "value": "49",
+    "source": "ner_test.json: per_type.NGUOI_KY; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 12, col 2",
+    "value": "34",
+    "source": "ner_test.json: per_type.NGUOI_KY; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 12, col 3",
+    "value": "15",
+    "source": "ner_test.json: per_type.NGUOI_KY; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 12, col 4",
+    "value": "15",
+    "source": "ner_test.json: per_type.NGUOI_KY; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 12, col 5",
+    "value": "69,39",
+    "source": "ner_test.json: per_type.NGUOI_KY; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 12, col 6",
+    "value": "69,39",
+    "source": "ner_test.json: per_type.NGUOI_KY; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 12, col 7",
+    "value": "69,39",
+    "source": "ner_test.json: per_type.NGUOI_KY; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 13, col 1",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_DUOC_HUONG_DAN_AP_DUNG; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 13, col 2",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_DUOC_HUONG_DAN_AP_DUNG; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 13, col 3",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_DUOC_HUONG_DAN_AP_DUNG; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 13, col 4",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_DUOC_HUONG_DAN_AP_DUNG; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 13, col 5",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_DUOC_HUONG_DAN_AP_DUNG; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 13, col 6",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_DUOC_HUONG_DAN_AP_DUNG; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 13, col 7",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_DUOC_HUONG_DAN_AP_DUNG; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 14, col 1",
+    "value": "6",
+    "source": "ner_test.json: per_type.VB_DUOC_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 14, col 2",
+    "value": "1",
+    "source": "ner_test.json: per_type.VB_DUOC_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 14, col 3",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_DUOC_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 14, col 4",
+    "value": "5",
+    "source": "ner_test.json: per_type.VB_DUOC_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 14, col 5",
+    "value": "100,00",
+    "source": "ner_test.json: per_type.VB_DUOC_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 14, col 6",
+    "value": "16,67",
+    "source": "ner_test.json: per_type.VB_DUOC_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 14, col 7",
+    "value": "28,57",
+    "source": "ner_test.json: per_type.VB_DUOC_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 15, col 1",
+    "value": "14",
+    "source": "ner_test.json: per_type.VB_BI_TAC_DONG_HIEU_LUC_MOT_PHAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 15, col 2",
+    "value": "1",
+    "source": "ner_test.json: per_type.VB_BI_TAC_DONG_HIEU_LUC_MOT_PHAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 15, col 3",
+    "value": "6",
+    "source": "ner_test.json: per_type.VB_BI_TAC_DONG_HIEU_LUC_MOT_PHAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 15, col 4",
+    "value": "13",
+    "source": "ner_test.json: per_type.VB_BI_TAC_DONG_HIEU_LUC_MOT_PHAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 15, col 5",
+    "value": "14,29",
+    "source": "ner_test.json: per_type.VB_BI_TAC_DONG_HIEU_LUC_MOT_PHAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 15, col 6",
+    "value": "7,14",
+    "source": "ner_test.json: per_type.VB_BI_TAC_DONG_HIEU_LUC_MOT_PHAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 15, col 7",
+    "value": "9,52",
+    "source": "ner_test.json: per_type.VB_BI_TAC_DONG_HIEU_LUC_MOT_PHAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 16, col 1",
+    "value": "7",
+    "source": "ner_test.json: per_type.VB_BI_TAC_DONG_HIEU_LUC_TOAN_BO; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 16, col 2",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_BI_TAC_DONG_HIEU_LUC_TOAN_BO; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 16, col 3",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_BI_TAC_DONG_HIEU_LUC_TOAN_BO; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 16, col 4",
+    "value": "7",
+    "source": "ner_test.json: per_type.VB_BI_TAC_DONG_HIEU_LUC_TOAN_BO; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 16, col 5",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_BI_TAC_DONG_HIEU_LUC_TOAN_BO; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 16, col 6",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_BI_TAC_DONG_HIEU_LUC_TOAN_BO; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 16, col 7",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_BI_TAC_DONG_HIEU_LUC_TOAN_BO; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 17, col 1",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_DUOC_DINH_CHINH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 17, col 2",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_DUOC_DINH_CHINH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 17, col 3",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_DUOC_DINH_CHINH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 17, col 4",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_DUOC_DINH_CHINH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 17, col 5",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_DUOC_DINH_CHINH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 17, col 6",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_DUOC_DINH_CHINH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 17, col 7",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_DUOC_DINH_CHINH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 18, col 1",
+    "value": "10",
+    "source": "ner_test.json: per_type.VB_DUOC_DAN_CHIEU; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 18, col 2",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_DUOC_DAN_CHIEU; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 18, col 3",
+    "value": "13",
+    "source": "ner_test.json: per_type.VB_DUOC_DAN_CHIEU; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 18, col 4",
+    "value": "10",
+    "source": "ner_test.json: per_type.VB_DUOC_DAN_CHIEU; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 18, col 5",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_DUOC_DAN_CHIEU; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 18, col 6",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_DUOC_DAN_CHIEU; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 18, col 7",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_DUOC_DAN_CHIEU; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 19, col 1",
+    "value": "70",
+    "source": "ner_test.json: per_type.CAN_CU_BAN_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 19, col 2",
+    "value": "28",
+    "source": "ner_test.json: per_type.CAN_CU_BAN_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 19, col 3",
+    "value": "113",
+    "source": "ner_test.json: per_type.CAN_CU_BAN_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 19, col 4",
+    "value": "42",
+    "source": "ner_test.json: per_type.CAN_CU_BAN_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 19, col 5",
+    "value": "19,86",
+    "source": "ner_test.json: per_type.CAN_CU_BAN_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 19, col 6",
+    "value": "40,00",
+    "source": "ner_test.json: per_type.CAN_CU_BAN_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 19, col 7",
+    "value": "26,54",
+    "source": "ner_test.json: per_type.CAN_CU_BAN_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 20, col 1",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_DUOC_GIAI_THICH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 20, col 2",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_DUOC_GIAI_THICH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 20, col 3",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_DUOC_GIAI_THICH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 20, col 4",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_DUOC_GIAI_THICH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 20, col 5",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_DUOC_GIAI_THICH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 20, col 6",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_DUOC_GIAI_THICH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 20, col 7",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_DUOC_GIAI_THICH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 21, col 1",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_BI_DINH_CHI_THI_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 21, col 2",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_BI_DINH_CHI_THI_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 21, col 3",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_BI_DINH_CHI_THI_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 21, col 4",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_BI_DINH_CHI_THI_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 21, col 5",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_BI_DINH_CHI_THI_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 21, col 6",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_BI_DINH_CHI_THI_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 21, col 7",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_BI_DINH_CHI_THI_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 22, col 1",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_BI_TAM_NGUNG_GIA_HAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 22, col 2",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_BI_TAM_NGUNG_GIA_HAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 22, col 3",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_BI_TAM_NGUNG_GIA_HAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 22, col 4",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_BI_TAM_NGUNG_GIA_HAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 22, col 5",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_BI_TAM_NGUNG_GIA_HAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 22, col 6",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_BI_TAM_NGUNG_GIA_HAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 22, col 7",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_BI_TAM_NGUNG_GIA_HAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 23, col 1",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_HUONG_DAN_AP_DUNG; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 23, col 2",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_HUONG_DAN_AP_DUNG; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 23, col 3",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_HUONG_DAN_AP_DUNG; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 23, col 4",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_HUONG_DAN_AP_DUNG; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 23, col 5",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_HUONG_DAN_AP_DUNG; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 23, col 6",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_HUONG_DAN_AP_DUNG; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 23, col 7",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_HUONG_DAN_AP_DUNG; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 24, col 1",
+    "value": "1",
+    "source": "ner_test.json: per_type.VB_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 24, col 2",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 24, col 3",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 24, col 4",
+    "value": "1",
+    "source": "ner_test.json: per_type.VB_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 24, col 5",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 24, col 6",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 24, col 7",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 25, col 1",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_QUY_DINH_HET_HIEU_LUC_MOT_PHAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 25, col 2",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_QUY_DINH_HET_HIEU_LUC_MOT_PHAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 25, col 3",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_QUY_DINH_HET_HIEU_LUC_MOT_PHAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 25, col 4",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_QUY_DINH_HET_HIEU_LUC_MOT_PHAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 25, col 5",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_QUY_DINH_HET_HIEU_LUC_MOT_PHAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 25, col 6",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_QUY_DINH_HET_HIEU_LUC_MOT_PHAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 25, col 7",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_QUY_DINH_HET_HIEU_LUC_MOT_PHAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 26, col 1",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_QUY_DINH_HET_HIEU_LUC_TOAN_BO; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 26, col 2",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_QUY_DINH_HET_HIEU_LUC_TOAN_BO; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 26, col 3",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_QUY_DINH_HET_HIEU_LUC_TOAN_BO; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 26, col 4",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_QUY_DINH_HET_HIEU_LUC_TOAN_BO; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 26, col 5",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_QUY_DINH_HET_HIEU_LUC_TOAN_BO; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 26, col 6",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_QUY_DINH_HET_HIEU_LUC_TOAN_BO; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 26, col 7",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_QUY_DINH_HET_HIEU_LUC_TOAN_BO; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 27, col 1",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_HOP_NHAT; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 27, col 2",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_HOP_NHAT; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 27, col 3",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_HOP_NHAT; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 27, col 4",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_HOP_NHAT; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 27, col 5",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_HOP_NHAT; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 27, col 6",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_HOP_NHAT; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 27, col 7",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_HOP_NHAT; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 28, col 1",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_DINH_CHINH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 28, col 2",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_DINH_CHINH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 28, col 3",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_DINH_CHINH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 28, col 4",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_DINH_CHINH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 28, col 5",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_DINH_CHINH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 28, col 6",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_DINH_CHINH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 28, col 7",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_DINH_CHINH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 29, col 1",
+    "value": "1",
+    "source": "ner_test.json: per_type.VB_DAN_CHIEU; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 29, col 2",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_DAN_CHIEU; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 29, col 3",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_DAN_CHIEU; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 29, col 4",
+    "value": "1",
+    "source": "ner_test.json: per_type.VB_DAN_CHIEU; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 29, col 5",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_DAN_CHIEU; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 29, col 6",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_DAN_CHIEU; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 29, col 7",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_DAN_CHIEU; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 30, col 1",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_AP_DUNG; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 30, col 2",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_AP_DUNG; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 30, col 3",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_AP_DUNG; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 30, col 4",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_AP_DUNG; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 30, col 5",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_AP_DUNG; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 30, col 6",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_AP_DUNG; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 30, col 7",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_AP_DUNG; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 31, col 1",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_GIAI_THICH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 31, col 2",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_GIAI_THICH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 31, col 3",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_GIAI_THICH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 31, col 4",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_GIAI_THICH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 31, col 5",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_GIAI_THICH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 31, col 6",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_GIAI_THICH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 31, col 7",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_GIAI_THICH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 32, col 1",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_DINH_CHI_THI_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 32, col 2",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_DINH_CHI_THI_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 32, col 3",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_DINH_CHI_THI_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 32, col 4",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_DINH_CHI_THI_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 32, col 5",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_DINH_CHI_THI_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 32, col 6",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_DINH_CHI_THI_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 32, col 7",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_DINH_CHI_THI_HANH; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 33, col 1",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_QUY_DINH_TAM_NGUNG_GIA_HAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 33, col 2",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_QUY_DINH_TAM_NGUNG_GIA_HAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 33, col 3",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_QUY_DINH_TAM_NGUNG_GIA_HAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 33, col 4",
+    "value": "0",
+    "source": "ner_test.json: per_type.VB_QUY_DINH_TAM_NGUNG_GIA_HAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 33, col 5",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_QUY_DINH_TAM_NGUNG_GIA_HAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 33, col 6",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_QUY_DINH_TAM_NGUNG_GIA_HAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 33, col 7",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.VB_QUY_DINH_TAM_NGUNG_GIA_HAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 34, col 1",
+    "value": "0",
+    "source": "ner_test.json: per_type.PHAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 34, col 2",
+    "value": "0",
+    "source": "ner_test.json: per_type.PHAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 34, col 3",
+    "value": "0",
+    "source": "ner_test.json: per_type.PHAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 34, col 4",
+    "value": "0",
+    "source": "ner_test.json: per_type.PHAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 34, col 5",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.PHAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 34, col 6",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.PHAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 34, col 7",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.PHAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 35, col 1",
+    "value": "73",
+    "source": "ner_test.json: per_type.CHUONG; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 35, col 2",
+    "value": "50",
+    "source": "ner_test.json: per_type.CHUONG; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 35, col 3",
+    "value": "24",
+    "source": "ner_test.json: per_type.CHUONG; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 35, col 4",
+    "value": "23",
+    "source": "ner_test.json: per_type.CHUONG; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 35, col 5",
+    "value": "67,57",
+    "source": "ner_test.json: per_type.CHUONG; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 35, col 6",
+    "value": "68,49",
+    "source": "ner_test.json: per_type.CHUONG; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 35, col 7",
+    "value": "68,03",
+    "source": "ner_test.json: per_type.CHUONG; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 36, col 1",
+    "value": "24",
+    "source": "ner_test.json: per_type.MUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 36, col 2",
+    "value": "12",
+    "source": "ner_test.json: per_type.MUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 36, col 3",
+    "value": "44",
+    "source": "ner_test.json: per_type.MUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 36, col 4",
+    "value": "12",
+    "source": "ner_test.json: per_type.MUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 36, col 5",
+    "value": "21,43",
+    "source": "ner_test.json: per_type.MUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 36, col 6",
+    "value": "50,00",
+    "source": "ner_test.json: per_type.MUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 36, col 7",
+    "value": "30,00",
+    "source": "ner_test.json: per_type.MUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 37, col 1",
+    "value": "0",
+    "source": "ner_test.json: per_type.TIEU_MUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 37, col 2",
+    "value": "0",
+    "source": "ner_test.json: per_type.TIEU_MUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 37, col 3",
+    "value": "0",
+    "source": "ner_test.json: per_type.TIEU_MUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 37, col 4",
+    "value": "0",
+    "source": "ner_test.json: per_type.TIEU_MUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 37, col 5",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.TIEU_MUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 37, col 6",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.TIEU_MUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 37, col 7",
+    "value": "0,00",
+    "source": "ner_test.json: per_type.TIEU_MUC; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 38, col 1",
+    "value": "611",
+    "source": "ner_test.json: per_type.DIEU; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 38, col 2",
+    "value": "203",
+    "source": "ner_test.json: per_type.DIEU; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 38, col 3",
+    "value": "428",
+    "source": "ner_test.json: per_type.DIEU; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 38, col 4",
+    "value": "408",
+    "source": "ner_test.json: per_type.DIEU; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 38, col 5",
+    "value": "32,17",
+    "source": "ner_test.json: per_type.DIEU; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 38, col 6",
+    "value": "33,22",
+    "source": "ner_test.json: per_type.DIEU; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 38, col 7",
+    "value": "32,69",
+    "source": "ner_test.json: per_type.DIEU; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 39, col 1",
+    "value": "1034",
+    "source": "ner_test.json: per_type.KHOAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 39, col 2",
+    "value": "903",
+    "source": "ner_test.json: per_type.KHOAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 39, col 3",
+    "value": "200",
+    "source": "ner_test.json: per_type.KHOAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 39, col 4",
+    "value": "131",
+    "source": "ner_test.json: per_type.KHOAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 39, col 5",
+    "value": "81,87",
+    "source": "ner_test.json: per_type.KHOAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 39, col 6",
+    "value": "87,33",
+    "source": "ner_test.json: per_type.KHOAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 39, col 7",
+    "value": "84,51",
+    "source": "ner_test.json: per_type.KHOAN; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 40, col 1",
+    "value": "411",
+    "source": "ner_test.json: per_type.DIEM; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 40, col 2",
+    "value": "359",
+    "source": "ner_test.json: per_type.DIEM; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 40, col 3",
+    "value": "74",
+    "source": "ner_test.json: per_type.DIEM; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 40, col 4",
+    "value": "52",
+    "source": "ner_test.json: per_type.DIEM; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 40, col 5",
+    "value": "82,91",
+    "source": "ner_test.json: per_type.DIEM; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 40, col 6",
+    "value": "87,35",
+    "source": "ner_test.json: per_type.DIEM; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 33, row 40, col 7",
+    "value": "85,07",
+    "source": "ner_test.json: per_type.DIEM; entities_per_type.csv"
+  },
+  {
+    "location": "Table index 34, row 1, col 1",
+    "value": "2043",
+    "source": "test_rgcn.json: per_class.THUOC; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 1, col 2",
+    "value": "51,49",
+    "source": "test_rgcn.json: per_class.THUOC; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 1, col 3",
+    "value": "53,30",
+    "source": "test_rgcn.json: per_class.THUOC; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 1, col 4",
+    "value": "52,38",
+    "source": "test_rgcn.json: per_class.THUOC; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 1, col 5",
+    "value": "18,65",
+    "source": "test_rgcn.json: per_class.THUOC; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 1, col 6",
+    "value": "20,66",
+    "source": "test_rgcn.json: per_class.THUOC; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 1, col 7",
+    "value": "19,60",
+    "source": "test_rgcn.json: per_class.THUOC; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 2, col 1",
+    "value": "70",
+    "source": "test_rgcn.json: per_class.CAN_CU_BAN_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 2, col 2",
+    "value": "62,92",
+    "source": "test_rgcn.json: per_class.CAN_CU_BAN_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 2, col 3",
+    "value": "80,00",
+    "source": "test_rgcn.json: per_class.CAN_CU_BAN_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 2, col 4",
+    "value": "70,44",
+    "source": "test_rgcn.json: per_class.CAN_CU_BAN_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 2, col 5",
+    "value": "12,50",
+    "source": "test_rgcn.json: per_class.CAN_CU_BAN_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 2, col 6",
+    "value": "22,86",
+    "source": "test_rgcn.json: per_class.CAN_CU_BAN_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 2, col 7",
+    "value": "16,16",
+    "source": "test_rgcn.json: per_class.CAN_CU_BAN_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 3, col 1",
+    "value": "0",
+    "source": "test_rgcn.json: per_class.HUONG_DAN_AP_DUNG; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 3, col 2",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.HUONG_DAN_AP_DUNG; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 3, col 3",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.HUONG_DAN_AP_DUNG; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 3, col 4",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.HUONG_DAN_AP_DUNG; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 3, col 5",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.HUONG_DAN_AP_DUNG; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 3, col 6",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.HUONG_DAN_AP_DUNG; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 3, col 7",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.HUONG_DAN_AP_DUNG; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 4, col 1",
+    "value": "0",
+    "source": "test_rgcn.json: per_class.DUOC_HUONG_DAN_AP_DUNG; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 4, col 2",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DUOC_HUONG_DAN_AP_DUNG; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 4, col 3",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DUOC_HUONG_DAN_AP_DUNG; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 4, col 4",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DUOC_HUONG_DAN_AP_DUNG; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 4, col 5",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DUOC_HUONG_DAN_AP_DUNG; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 4, col 6",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DUOC_HUONG_DAN_AP_DUNG; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 4, col 7",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DUOC_HUONG_DAN_AP_DUNG; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 5, col 1",
+    "value": "1",
+    "source": "test_rgcn.json: per_class.QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 5, col 2",
+    "value": "33,33",
+    "source": "test_rgcn.json: per_class.QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 5, col 3",
+    "value": "100,00",
+    "source": "test_rgcn.json: per_class.QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 5, col 4",
+    "value": "50,00",
+    "source": "test_rgcn.json: per_class.QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 5, col 5",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 5, col 6",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 5, col 7",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 6, col 1",
+    "value": "5",
+    "source": "test_rgcn.json: per_class.DUOC_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 6, col 2",
+    "value": "23,53",
+    "source": "test_rgcn.json: per_class.DUOC_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 6, col 3",
+    "value": "80,00",
+    "source": "test_rgcn.json: per_class.DUOC_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 6, col 4",
+    "value": "36,36",
+    "source": "test_rgcn.json: per_class.DUOC_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 6, col 5",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DUOC_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 6, col 6",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DUOC_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 6, col 7",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DUOC_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 7, col 1",
+    "value": "0",
+    "source": "test_rgcn.json: per_class.QUY_DINH_HET_HIEU_LUC_MOT_PHAN; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 7, col 2",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.QUY_DINH_HET_HIEU_LUC_MOT_PHAN; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 7, col 3",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.QUY_DINH_HET_HIEU_LUC_MOT_PHAN; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 7, col 4",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.QUY_DINH_HET_HIEU_LUC_MOT_PHAN; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 7, col 5",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.QUY_DINH_HET_HIEU_LUC_MOT_PHAN; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 7, col 6",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.QUY_DINH_HET_HIEU_LUC_MOT_PHAN; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 7, col 7",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.QUY_DINH_HET_HIEU_LUC_MOT_PHAN; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 8, col 1",
+    "value": "14",
+    "source": "test_rgcn.json: per_class.BI_TAC_DONG_HIEU_LUC_MOT_PHAN; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 8, col 2",
+    "value": "66,67",
+    "source": "test_rgcn.json: per_class.BI_TAC_DONG_HIEU_LUC_MOT_PHAN; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 8, col 3",
+    "value": "71,43",
+    "source": "test_rgcn.json: per_class.BI_TAC_DONG_HIEU_LUC_MOT_PHAN; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 8, col 4",
+    "value": "68,97",
+    "source": "test_rgcn.json: per_class.BI_TAC_DONG_HIEU_LUC_MOT_PHAN; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 8, col 5",
+    "value": "3,03",
+    "source": "test_rgcn.json: per_class.BI_TAC_DONG_HIEU_LUC_MOT_PHAN; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 8, col 6",
+    "value": "7,14",
+    "source": "test_rgcn.json: per_class.BI_TAC_DONG_HIEU_LUC_MOT_PHAN; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 8, col 7",
+    "value": "4,26",
+    "source": "test_rgcn.json: per_class.BI_TAC_DONG_HIEU_LUC_MOT_PHAN; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 9, col 1",
+    "value": "0",
+    "source": "test_rgcn.json: per_class.QUY_DINH_HET_HIEU_LUC_TOAN_BO; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 9, col 2",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.QUY_DINH_HET_HIEU_LUC_TOAN_BO; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 9, col 3",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.QUY_DINH_HET_HIEU_LUC_TOAN_BO; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 9, col 4",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.QUY_DINH_HET_HIEU_LUC_TOAN_BO; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 9, col 5",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.QUY_DINH_HET_HIEU_LUC_TOAN_BO; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 9, col 6",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.QUY_DINH_HET_HIEU_LUC_TOAN_BO; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 9, col 7",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.QUY_DINH_HET_HIEU_LUC_TOAN_BO; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 10, col 1",
+    "value": "7",
+    "source": "test_rgcn.json: per_class.BI_TAC_DONG_HIEU_LUC_TOAN_BO; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 10, col 2",
+    "value": "71,43",
+    "source": "test_rgcn.json: per_class.BI_TAC_DONG_HIEU_LUC_TOAN_BO; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 10, col 3",
+    "value": "71,43",
+    "source": "test_rgcn.json: per_class.BI_TAC_DONG_HIEU_LUC_TOAN_BO; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 10, col 4",
+    "value": "71,43",
+    "source": "test_rgcn.json: per_class.BI_TAC_DONG_HIEU_LUC_TOAN_BO; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 10, col 5",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.BI_TAC_DONG_HIEU_LUC_TOAN_BO; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 10, col 6",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.BI_TAC_DONG_HIEU_LUC_TOAN_BO; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 10, col 7",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.BI_TAC_DONG_HIEU_LUC_TOAN_BO; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 11, col 1",
+    "value": "0",
+    "source": "test_rgcn.json: per_class.DINH_CHINH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 11, col 2",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DINH_CHINH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 11, col 3",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DINH_CHINH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 11, col 4",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DINH_CHINH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 11, col 5",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DINH_CHINH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 11, col 6",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DINH_CHINH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 11, col 7",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DINH_CHINH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 12, col 1",
+    "value": "0",
+    "source": "test_rgcn.json: per_class.DUOC_DINH_CHINH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 12, col 2",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DUOC_DINH_CHINH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 12, col 3",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DUOC_DINH_CHINH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 12, col 4",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DUOC_DINH_CHINH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 12, col 5",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DUOC_DINH_CHINH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 12, col 6",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DUOC_DINH_CHINH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 12, col 7",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DUOC_DINH_CHINH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 13, col 1",
+    "value": "2",
+    "source": "test_rgcn.json: per_class.DAN_CHIEU; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 13, col 2",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DAN_CHIEU; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 13, col 3",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DAN_CHIEU; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 13, col 4",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DAN_CHIEU; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 13, col 5",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DAN_CHIEU; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 13, col 6",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DAN_CHIEU; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 13, col 7",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DAN_CHIEU; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 14, col 1",
+    "value": "5",
+    "source": "test_rgcn.json: per_class.DUOC_DAN_CHIEU; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 14, col 2",
+    "value": "20,00",
+    "source": "test_rgcn.json: per_class.DUOC_DAN_CHIEU; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 14, col 3",
+    "value": "40,00",
+    "source": "test_rgcn.json: per_class.DUOC_DAN_CHIEU; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 14, col 4",
+    "value": "26,67",
+    "source": "test_rgcn.json: per_class.DUOC_DAN_CHIEU; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 14, col 5",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DUOC_DAN_CHIEU; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 14, col 6",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DUOC_DAN_CHIEU; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 14, col 7",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DUOC_DAN_CHIEU; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 15, col 1",
+    "value": "0",
+    "source": "test_rgcn.json: per_class.AP_DUNG; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 15, col 2",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.AP_DUNG; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 15, col 3",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.AP_DUNG; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 15, col 4",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.AP_DUNG; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 15, col 5",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.AP_DUNG; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 15, col 6",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.AP_DUNG; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 15, col 7",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.AP_DUNG; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 16, col 1",
+    "value": "0",
+    "source": "test_rgcn.json: per_class.GIAI_THICH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 16, col 2",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.GIAI_THICH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 16, col 3",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.GIAI_THICH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 16, col 4",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.GIAI_THICH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 16, col 5",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.GIAI_THICH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 16, col 6",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.GIAI_THICH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 16, col 7",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.GIAI_THICH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 17, col 1",
+    "value": "0",
+    "source": "test_rgcn.json: per_class.DUOC_GIAI_THICH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 17, col 2",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DUOC_GIAI_THICH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 17, col 3",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DUOC_GIAI_THICH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 17, col 4",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DUOC_GIAI_THICH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 17, col 5",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DUOC_GIAI_THICH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 17, col 6",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DUOC_GIAI_THICH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 17, col 7",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DUOC_GIAI_THICH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 18, col 1",
+    "value": "0",
+    "source": "test_rgcn.json: per_class.HOP_NHAT; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 18, col 2",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.HOP_NHAT; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 18, col 3",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.HOP_NHAT; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 18, col 4",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.HOP_NHAT; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 18, col 5",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.HOP_NHAT; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 18, col 6",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.HOP_NHAT; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 18, col 7",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.HOP_NHAT; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 19, col 1",
+    "value": "0",
+    "source": "test_rgcn.json: per_class.DINH_CHI_THI_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 19, col 2",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DINH_CHI_THI_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 19, col 3",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DINH_CHI_THI_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 19, col 4",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DINH_CHI_THI_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 19, col 5",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DINH_CHI_THI_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 19, col 6",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DINH_CHI_THI_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 19, col 7",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.DINH_CHI_THI_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 20, col 1",
+    "value": "0",
+    "source": "test_rgcn.json: per_class.BI_DINH_CHI_THI_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 20, col 2",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.BI_DINH_CHI_THI_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 20, col 3",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.BI_DINH_CHI_THI_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 20, col 4",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.BI_DINH_CHI_THI_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 20, col 5",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.BI_DINH_CHI_THI_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 20, col 6",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.BI_DINH_CHI_THI_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 20, col 7",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.BI_DINH_CHI_THI_HANH; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 21, col 1",
+    "value": "0",
+    "source": "test_rgcn.json: per_class.QUY_DINH_TAM_NGUNG_GIA_HAN; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 21, col 2",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.QUY_DINH_TAM_NGUNG_GIA_HAN; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 21, col 3",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.QUY_DINH_TAM_NGUNG_GIA_HAN; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 21, col 4",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.QUY_DINH_TAM_NGUNG_GIA_HAN; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 21, col 5",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.QUY_DINH_TAM_NGUNG_GIA_HAN; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 21, col 6",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.QUY_DINH_TAM_NGUNG_GIA_HAN; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 21, col 7",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.QUY_DINH_TAM_NGUNG_GIA_HAN; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 22, col 1",
+    "value": "0",
+    "source": "test_rgcn.json: per_class.BI_TAM_NGUNG_GIA_HAN; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 22, col 2",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.BI_TAM_NGUNG_GIA_HAN; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 22, col 3",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.BI_TAM_NGUNG_GIA_HAN; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 22, col 4",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.BI_TAM_NGUNG_GIA_HAN; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 22, col 5",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.BI_TAM_NGUNG_GIA_HAN; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 22, col 6",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.BI_TAM_NGUNG_GIA_HAN; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Table index 34, row 22, col 7",
+    "value": "0,00",
+    "source": "test_rgcn.json: per_class.BI_TAM_NGUNG_GIA_HAN; relations_rgcn_{gold_entities,predicted_entities_end_to_end}.csv"
+  },
+  {
+    "location": "Paragraph 261",
+    "value": "Các kết quả thực nghiệm được báo cáo theo lần chạy phobert_rgcn_v2_run_42, với seed 42. Checkpoint và ngưỡng được chọn trên validation; các bảng test phân biệt thực thể chuẩn và thực thể NER dự đoán.",
+    "source": "run_config.json; selected_checkpoints.json"
+  },
+  {
+    "location": "Paragraph 440",
+    "value": "Audit ghi nhận 376 tài liệu, trong đó 375 có phần tổng hợp cuối văn bản. Sau khi loại 10.652 thực thể ở phần tổng hợp và 8.980 quan hệ có đầu mút ngoài phần thân, dữ liệu còn 53.482 thực thể và 49.821 quan hệ; 978 ranh giới thực thể được cắt khoảng trắng.",
+    "source": "data_audit.json: totals"
+  },
+  {
+    "location": "Paragraph 591",
+    "value": "Thực nghiệm hoàn tất trên Tesla T4 với seed 42. Các bảng và hình lấy từ cùng gói phobert_rgcn_v2_run_42_results.zip; số liệu phần trăm được làm tròn đến hai chữ số thập phân.",
+    "source": "run_status.json; run_config.json"
+  },
+  {
+    "location": "Paragraph 622",
+    "value": "NER chạy 20 epoch; checkpoint tốt nhất ở epoch 18, ngưỡng 0,80, F1 validation 72,50%. Loss train tại checkpoint là 0,002204. Trên test, mô hình đạt Precision 61,00%, Recall 69,50%, F1 64,97%, với TP = 1.855, FP = 1.186 và FN = 814.",
+    "source": "ner_history.json; selected_checkpoints.json; ner_test.json"
+  },
+  {
+    "location": "Paragraph 630",
+    "value": "Đánh giá exact-span/type ghi nhận 814 thực thể tham chiếu không khớp dự đoán và 1.186 dự đoán không khớp tham chiếu. Các số này là FN và FP tổng hợp: sai loại hoặc sai ranh giới cũng có thể tạo đồng thời một FP và một FN. Chưa thể phân rã số đếm thành các nguyên nhân loại trừ nhau từ số liệu tổng hợp.",
+    "source": "ner_test.json: tp/fp/fn; không có dự đoán chi tiết trong ZIP"
+  },
+  {
+    "location": "Table index 24, row 1, col 0",
+    "value": "Thực thể tham chiếu không khớp (FN)",
+    "source": "ner_test.json: fn; không tách riêng nguyên nhân"
+  },
+  {
+    "location": "Table index 24, row 2, col 0",
+    "value": "Dự đoán không khớp (FP)",
+    "source": "ner_test.json: fp; không tách riêng nguyên nhân"
+  },
+  {
+    "location": "Paragraph 637",
+    "value": "Ở chế độ thực thể chuẩn, RGCN đạt micro-F1 52,91%, cao hơn semantic 50,12% khoảng 2,80 điểm phần trăm. Ở chế độ toàn quy trình, micro-F1 tăng từ 17,26% lên 19,02% (+1,76 điểm phần trăm), trong khi macro-F1 trên 22 nhãn giảm từ 2,32% xuống 1,82%. Đây là kết quả của một seed, chưa phản ánh độ biến thiên giữa các lần chạy.",
+    "source": "comparison.csv; chênh lệch tính từ số chưa làm tròn"
+  },
+  {
+    "location": "Paragraph 645",
+    "value": "Semantic chọn epoch 30/30, RGCN chọn epoch 15/20; cả hai dùng ngưỡng 0,80. Micro-F1 validation toàn quy trình tương ứng là 29,69% và 30,88%. RGCN dừng sau 20 epoch, còn checkpoint được đánh giá là epoch 15; ngưỡng chọn trên validation được giữ nguyên cho test.",
+    "source": "selected_checkpoints.json; relation_semantic_history.json; relation_rgcn_history.json; run_config.json"
+  },
+  {
+    "location": "Paragraph 649",
+    "value": "Tập test có 2147 bộ ba tham chiếu và 8/22 nhãn có mẫu. Candidate recall đạt 85,47% với thực thể chuẩn, giảm còn 31,53% với thực thể NER dự đoán. Tổng số cặp ứng viên tương ứng là 85.746 và 98.784; số bộ ba ngoài ứng viên là 312 và 1470.",
+    "source": "test_rgcn.json; split_relation_support.json"
+  },
+  {
+    "location": "Paragraph 650",
+    "value": "THUOC có 2.043/2147 bộ ba test (95,16%), chi phối micro-F1. Với thực thể chuẩn, RGCN đạt F1 THUOC 52,38% và CAN_CU_BAN_HANH 70,44% (70 mẫu). Ở chế độ đầu cuối, chất lượng giảm và macro-F1 chỉ đạt 1,82%; do đó chưa thể kết luận cải thiện đồng đều trên các nhãn.",
+    "source": "test_rgcn.json: per_class; split_relation_support.json: test"
+  },
+  {
+    "location": "Paragraph 675",
+    "value": "Nhật ký run_status.json ghi tổng thời gian lần chạy là 2.339,57 giây (khoảng 38,99 phút), trạng thái complete, thiết bị CUDA Tesla T4. Đây là thời gian tổng được pipeline ghi nhận, không phải thời gian suy luận cho một DOCX và không thay thế phép đo từng giai đoạn trong Bảng 6.15.",
+    "source": "run_status.json: elapsed_seconds, status, device, device_name"
+  },
+  {
+    "location": "Paragraph 679",
+    "value": "Kết quả cho thấy cấu hình RGCN cải thiện micro-F1 ở cả hai chế độ so với semantic, nhưng macro-F1 toàn quy trình giảm. Khoảng cách giữa thực thể chuẩn và toàn quy trình, cùng candidate recall 31,53% ở chế độ đầu cuối, cho thấy nhận diện đầu mút và độ bao phủ ứng viên cần được ưu tiên cải thiện. Kết quả hiện tại được đo trên một seed và nhãn tham chiếu hiện có.",
+    "source": "comparison.csv; test_rgcn.json; run_config.json"
+  },
+  {
+    "location": "Paragraph 683",
+    "value": "NER đạt F1 64,97%. RE toàn quy trình của PhoBERT–RGCN đạt micro-F1 19,02% và macro-F1 trên 22 nhãn 1,82%; micro-F1 tăng 1,76 điểm phần trăm so với semantic, nhưng macro-F1 giảm 0,50 điểm. Với thực thể chuẩn, RGCN đạt micro-F1 52,91% và macro-F1 17,10%. Các kết quả phản ánh một lần chạy seed 42, không đủ để khẳng định độ ổn định hoặc cải thiện trên mọi nhãn.",
+    "source": "ner_test.json; comparison.csv"
+  },
+  {
+    "location": "Paragraph 719",
+    "value": "Các bảng chi tiết được trích từ lần chạy phobert_rgcn_v2_run_42. TP/FP/FN là số đếm nguyên; P/R/F1 trình bày theo %. Lớp không có gold vẫn được giữ và điểm được tính theo quy ước 0.",
+    "source": "ner_test.json; test_rgcn.json"
+  },
+  {
+    "location": "Hình tại paragraph 620",
+    "value": "ner_training.png",
+    "source": "figures/ner_training.png"
+  },
+  {
+    "location": "Hình tại paragraph 638",
+    "value": "re_test_comparison.png",
+    "source": "figures/re_test_comparison.png"
+  },
+  {
+    "location": "Hình tại paragraph 643",
+    "value": "re_training.png",
+    "source": "figures/re_training.png"
+  },
+  {
+    "location": "Phụ lục A.2",
+    "value": "Liên kết GitHub, notebook, mã nguồn, kết quả và hồ sơ tái lập",
+    "source": "git remote origin; run_config.json; selected_checkpoints.json; split_relation_support.json"
+  }
+]

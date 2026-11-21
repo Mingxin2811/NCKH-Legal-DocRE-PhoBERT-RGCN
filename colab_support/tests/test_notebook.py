@@ -75,6 +75,16 @@ class NotebookTests(unittest.TestCase):
             self.assertEqual(ns["audit"]["totals"]["documents"],3)
             self.assertTrue((root/"output"/"data_audit.json").is_file())
 
+    def test_inlined_loader_accepts_drive_label_schema(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            raw={"full_text":"A", "entities":[
+                {"id":"a", "start":0, "end":1, "text":"A", "label":"SO_HIEU"}
+            ], "relations":[]}
+            (Path(tmp)/"drive_ket_qua.json").write_text(json.dumps(raw),encoding="utf-8")
+            docs,audit=self.ns["load_documents"](tmp)
+            self.assertEqual(docs[0]["entities"][0]["code"],"SO_HIEU")
+            self.assertEqual(audit["totals"]["entities_code_from_label"],1)
+
     def test_data_errors_include_the_filename_without_wrapper(self):
         with tempfile.TemporaryDirectory() as tmp:
             file=Path(tmp)/"broken_ket_qua.json"

@@ -84,3 +84,14 @@ Chạy một epoch trên dữ liệu nhỏ chỉ xác minh chương trình, khô
 
 Đề tài kế thừa các mô hình và thư viện trên; không tự nhận đã tiền huấn luyện PhoBERT
 hoặc phát hành checkpoint LegalPhoBERT chuyên luật.
+
+
+## Kết quả thực nghiệm PhoBERT RGCN v2 seed 42
+
+Lần chạy `phobert_rgcn_v2_run_42` dùng 376 tài liệu (263 train, 56 validation, 57 test). NER exact-span/type đạt F1 64,97%. RE RGCN đạt micro-F1 52,91% với thực thể chuẩn và 19,02% khi chạy đầu cuối; macro-F1 22 nhãn đầu cuối là 1,82% (semantic: 2,32%). Đây là một seed; test có 8/22 nhãn quan hệ có mẫu.
+
+- [Báo cáo đã cập nhật](docs/27_BC_Chinh_Sua.docx)
+- [Metrics, checkpoint và hình của lần chạy](results/phobert_rgcn_v2_run_42/)
+- [Đối chiếu từng phần đã điền với file nguồn](results/phobert_rgcn_v2_run_42/DOI_CHIEU_KET_QUA_RUN42.md)
+
+Các phần kiểm tra thủ công, kiểm tra DOCX mới, benchmark suy luận và nhật ký thu thập chưa có bằng chứng trong gói kết quả vẫn giữ trạng thái chờ trong báo cáo.

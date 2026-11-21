@@ -1,0 +1,202 @@
+[
+  {
+    "epoch": 1,
+    "loss": 0.06369793754488853,
+    "val_f1_macro_22": 0.004177687507897366,
+    "val_f1_micro_positive": 0.04279330702240777,
+    "val_precision_micro": 0.026981450252951095,
+    "val_recall_micro": 0.10337220296249607,
+    "selection_metric": "f1_micro_positive",
+    "threshold": 0.35
+  },
+  {
+    "epoch": 2,
+    "loss": 0.024616856333032115,
+    "val_f1_macro_22": 0.009606878142431892,
+    "val_f1_micro_positive": 0.11571029323841436,
+    "val_precision_micro": 0.07025274780935015,
+    "val_recall_micro": 0.3278443113772455,
+    "selection_metric": "f1_micro_positive",
+    "threshold": 0.5
+  },
+  {
+    "epoch": 3,
+    "loss": 0.016703106380347076,
+    "val_f1_macro_22": 0.013663307555027175,
+    "val_f1_micro_positive": 0.18935512726681303,
+    "val_precision_micro": 0.1276030249890399,
+    "val_recall_micro": 0.366924046643555,
+    "selection_metric": "f1_micro_positive",
+    "threshold": 0.5
+  },
+  {
+    "epoch": 4,
+    "loss": 0.012883389261111601,
+    "val_f1_macro_22": 0.01908159078323375,
+    "val_f1_micro_positive": 0.21051377938689467,
+    "val_precision_micro": 0.15086545355228567,
+    "val_recall_micro": 0.3481720768988339,
+    "selection_metric": "f1_micro_positive",
+    "threshold": 0.8
+  },
+  {
+    "epoch": 5,
+    "loss": 0.009697403644769653,
+    "val_f1_macro_22": 0.017599706075295075,
+    "val_f1_micro_positive": 0.24276821677041377,
+    "val_precision_micro": 0.1817007282123561,
+    "val_recall_micro": 0.36566341002206115,
+    "selection_metric": "f1_micro_positive",
+    "threshold": 0.65
+  },
+  {
+    "epoch": 6,
+    "loss": 0.008009445546008033,
+    "val_f1_macro_22": 0.017184285003032793,
+    "val_f1_micro_positive": 0.26508978517969806,
+    "val_precision_micro": 0.19612956873417242,
+    "val_recall_micro": 0.40884021430822565,
+    "selection_metric": "f1_micro_positive",
+    "threshold": 0.65
+  },
+  {
+    "epoch": 7,
+    "loss": 0.008932516936995235,
+    "val_f1_macro_22": 0.016736649508338832,
+    "val_f1_micro_positive": 0.24870769092461906,
+    "val_precision_micro": 0.1739827683793472,
+    "val_recall_micro": 0.4359439016703435,
+    "selection_metric": "f1_micro_positive",
+    "threshold": 0.65
+  },
+  {
+    "epoch": 8,
+    "loss": 0.006681083754778878,
+    "val_f1_macro_22": 0.01825619317733306,
+    "val_f1_micro_positive": 0.25526805547217385,
+    "val_precision_micro": 0.17108828026502856,
+    "val_recall_micro": 0.5025212732429877,
+    "selection_metric": "f1_micro_positive",
+    "threshold": 0.8
+  },
+  {
+    "epoch": 9,
+    "loss": 0.005877020786771873,
+    "val_f1_macro_22": 0.020885373809264494,
+    "val_f1_micro_positive": 0.2772721526987738,
+    "val_precision_micro": 0.23147952722667792,
+    "val_recall_micro": 0.3456508036558462,
+    "selection_metric": "f1_micro_positive",
+    "threshold": 0.8
+  },
+  {
+    "epoch": 10,
+    "loss": 0.004781027250619005,
+    "val_f1_macro_22": 0.04453060147502696,
+    "val_f1_micro_positive": 0.28537969552292586,
+    "val_precision_micro": 0.2305564989568677,
+    "val_recall_micro": 0.3744090765836748,
+    "selection_metric": "f1_micro_positive",
+    "threshold": 0.8
+  },
+  {
+    "epoch": 11,
+    "loss": 0.004431152545279896,
+    "val_f1_macro_22": 0.0395257647826604,
+    "val_f1_micro_positive": 0.2955242547869331,
+    "val_precision_micro": 0.2375412896739911,
+    "val_recall_micro": 0.3909549322407816,
+    "selection_metric": "f1_micro_positive",
+    "threshold": 0.8
+  },
+  {
+    "epoch": 12,
+    "loss": 0.00425545425279674,
+    "val_f1_macro_22": 0.03784816877838755,
+    "val_f1_micro_positive": 0.28777820021641853,
+    "val_precision_micro": 0.22882656620622296,
+    "val_recall_micro": 0.3876457611093602,
+    "selection_metric": "f1_micro_positive",
+    "threshold": 0.8
+  },
+  {
+    "epoch": 13,
+    "loss": 0.00472990062773849,
+    "val_f1_macro_22": 0.03562089652904066,
+    "val_f1_micro_positive": 0.2917154498196975,
+    "val_precision_micro": 0.20753648297461186,
+    "val_recall_micro": 0.4907815947053262,
+    "selection_metric": "f1_micro_positive",
+    "threshold": 0.65
+  },
+  {
+    "epoch": 14,
+    "loss": 0.004156750547830339,
+    "val_f1_macro_22": 0.029064611350944014,
+    "val_f1_micro_positive": 0.3014747322938193,
+    "val_precision_micro": 0.2147397296935635,
+    "val_recall_micro": 0.5057516545855657,
+    "selection_metric": "f1_micro_positive",
+    "threshold": 0.8
+  },
+  {
+    "epoch": 15,
+    "loss": 0.0036681135061998396,
+    "val_f1_macro_22": 0.03596277927398379,
+    "val_f1_micro_positive": 0.3087530890563505,
+    "val_precision_micro": 0.2519293004729898,
+    "val_recall_micro": 0.39867633154743143,
+    "selection_metric": "f1_micro_positive",
+    "threshold": 0.8
+  },
+  {
+    "epoch": 16,
+    "loss": 0.0034176951618274487,
+    "val_f1_macro_22": 0.0425494065835074,
+    "val_f1_micro_positive": 0.30403156207619286,
+    "val_precision_micro": 0.22126117072820586,
+    "val_recall_micro": 0.48573904821935077,
+    "selection_metric": "f1_micro_positive",
+    "threshold": 0.65
+  },
+  {
+    "epoch": 17,
+    "loss": 0.003856918617237167,
+    "val_f1_macro_22": 0.03696659364400016,
+    "val_f1_micro_positive": 0.28391919469858523,
+    "val_precision_micro": 0.20023286652220318,
+    "val_recall_micro": 0.4877875827292783,
+    "selection_metric": "f1_micro_positive",
+    "threshold": 0.65
+  },
+  {
+    "epoch": 18,
+    "loss": 0.006167895280800249,
+    "val_f1_macro_22": 0.02190237784654383,
+    "val_f1_micro_positive": 0.2840561018861841,
+    "val_precision_micro": 0.215526380167985,
+    "val_recall_micro": 0.41648282382603213,
+    "selection_metric": "f1_micro_positive",
+    "threshold": 0.8
+  },
+  {
+    "epoch": 19,
+    "loss": 0.0037463587654628385,
+    "val_f1_macro_22": 0.02179443707499303,
+    "val_f1_micro_positive": 0.2999084682637377,
+    "val_precision_micro": 0.2501711336949081,
+    "val_recall_micro": 0.3743302867948314,
+    "selection_metric": "f1_micro_positive",
+    "threshold": 0.8
+  },
+  {
+    "epoch": 20,
+    "loss": 0.00305969481433996,
+    "val_f1_macro_22": 0.0230654780883619,
+    "val_f1_micro_positive": 0.29110018320316267,
+    "val_precision_micro": 0.20971103084190051,
+    "val_recall_micro": 0.4757327450362433,
+    "selection_metric": "f1_micro_positive",
+    "threshold": 0.8
+  }
+]

@@ -7,7 +7,14 @@ import re
 import unicodedata
 from collections import Counter, defaultdict
 from pathlib import Path
-from labels import ALL_ENTITIES, ALL_RELATIONS, RELATION_ALIAS_MAP
+from labels import (
+    ALL_ENTITIES,
+    ALL_RELATIONS,
+    ENTITY_ALIAS_MAP,
+    ENTITY_TAXONOMY,
+    RELATION_ALIAS_MAP,
+    RELATION_TAXONOMY,
+)
 
 FOOTER_MARKER = "--- THÔNG TIN THUỘC TÍNH & LƯỢC ĐỒ TỪ FILE JSON ---"
 PIPELINE_VERSION = "raw-doc-v2"
@@ -32,7 +39,140 @@ def save_json(path, value):
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
-def load_documents(root):
+def annotation_code(annotation, taxonomy, kind, path, aliases=None):
+    """Accept explicit schema codes or exact taxonomy names, never infer from text/ID."""
+    aliases = aliases or {}
+    def resolve(value):
+        if not isinstance(value, str) or not value.strip():
+            return None
+        value = unicodedata.normalize('NFC', value).strip().upper()
+        if value in taxonomy:
+            return value
+        if value in aliases:
+            canonical = aliases[value]
+            if canonical in taxonomy:
+                return canonical
+        matches = {code for code, info in taxonomy.items()
+                   if unicodedata.normalize('NFC', info[1]).strip().upper() == value}
+        if len(matches) == 1:
+            return next(iter(matches))
+        alt = value[3:] if value.startswith('VB_') else f'VB_{value}'
+        if alt in taxonomy:
+            return alt
+        if alt in aliases:
+            canonical = aliases[alt]
+            if canonical in taxonomy:
+                return canonical
+
+        # Heuristic fallback cho cac bien the van ban phap ly
+        if kind == 'entity':
+            if any(k in value for k in ('THAY_THE', 'BAI_BO', 'THAY_THẾ', 'BÃI_BỎ')):
+                return 'VB_BI_TAC_DONG_HIEU_LUC_TOAN_BO' if any(k in value for k in ('BI', 'DUOC', 'BỊ', 'ĐƯỢC')) else 'VB_QUY_DINH_HET_HIEU_LUC_TOAN_BO'
+            if any(k in value for k in ('SUA_DOI', 'BO_SUNG', 'SỬA_ĐỔI', 'BỔ_SUNG')):
+                return 'VB_BI_TAC_DONG_HIEU_LUC_MOT_PHAN' if any(k in value for k in ('BI', 'DUOC', 'BỊ', 'ĐƯỢC')) else 'VB_QUY_DINH_HET_HIEU_LUC_MOT_PHAN'
+            if 'HET_HIEU_LUC' in value or 'HẾT_HIỆU_LỰC' in value:
+                is_partial = any(k in value for k in ('MOT_PHAN', '1_PHAN', 'MỘT_PHẦN'))
+                is_passive = any(k in value for k in ('BI', 'TAC_DONG', 'BỊ', 'TÁC_ĐỘNG'))
+                if is_partial:
+                    return 'VB_BI_TAC_DONG_HIEU_LUC_MOT_PHAN' if is_passive else 'VB_QUY_DINH_HET_HIEU_LUC_MOT_PHAN'
+                else:
+                    return 'VB_BI_TAC_DONG_HIEU_LUC_TOAN_BO' if is_passive else 'VB_QUY_DINH_HET_HIEU_LUC_TOAN_BO'
+            if 'CHI_TIET' in value or 'CHI_TIẾT' in value:
+                return 'VB_DUOC_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH' if any(k in value for k in ('DUOC', 'BI', 'ĐƯỢC', 'BỊ')) else 'VB_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH'
+            if 'HUONG_DAN' in value or 'HƯỚNG_DẪN' in value:
+                return 'VB_DUOC_HUONG_DAN_AP_DUNG' if any(k in value for k in ('DUOC', 'BI', 'ĐƯỢC', 'BỊ')) else 'VB_HUONG_DAN_AP_DUNG'
+            if 'DINH_CHI' in value or 'ĐÌNH_CHỈ' in value:
+                return 'VB_BI_DINH_CHI_THI_HANH' if any(k in value for k in ('BI', 'DUOC', 'BỊ', 'ĐƯỢC')) else 'VB_DINH_CHI_THI_HANH'
+            if any(k in value for k in ('TAM_NGUNG', 'GIA_HAN', 'TẠM_NGƯNG', 'GIA_HẠN')):
+                return 'VB_BI_TAM_NGUNG_GIA_HAN' if any(k in value for k in ('BI', 'DUOC', 'BỊ', 'ĐƯỢC')) else 'VB_QUY_DINH_TAM_NGUNG_GIA_HAN'
+            if 'DINH_CHINH' in value or 'ĐÍNH_CHÍNH' in value:
+                return 'VB_DUOC_DINH_CHINH' if any(k in value for k in ('DUOC', 'BI', 'ĐƯỢC', 'BỊ')) else 'VB_DINH_CHINH'
+            if any(k in value for k in ('DICH', 'DỊCH', 'TRANSLAT', 'TIENG_ANH', 'TIẾNG_ANH', 'ENGLISH', 'PHU_LUC', 'PHỤ_LỤC', 'DINH_KEM', 'ĐÍNH_KÈM', 'LIEN_QUAN', 'LIÊN_QUAN', 'CONG_BO', 'CÔNG_BỐ')):
+                return 'VB_DUOC_DAN_CHIEU' if any(k in value for k in ('DUOC', 'BI', 'ĐƯỢC', 'BỊ')) else 'VB_DAN_CHIEU'
+            if 'DAN_CHIEU' in value or 'DẪN_CHIẾU' in value:
+                return 'VB_DUOC_DAN_CHIEU' if any(k in value for k in ('DUOC', 'BI', 'ĐƯỢC', 'BỊ')) else 'VB_DAN_CHIEU'
+            if 'GIAI_THICH' in value or 'GIẢI_THÍCH' in value:
+                return 'VB_DUOC_GIAI_THICH' if any(k in value for k in ('DUOC', 'BI', 'ĐƯỢC', 'BỊ')) else 'VB_GIAI_THICH'
+            if any(k in value for k in ('CAN_CU', 'CĂN_CỨ', 'TO_TRINH', 'TỜ_TRÌNH')):
+                return 'CAN_CU_BAN_HANH'
+            if any(k in value for k in ('CONG_BAO', 'CÔNG_BÁO')):
+                return 'SO_HIEU'
+            if 'HOP_NHAT' in value or 'HỢP_NHẤT' in value:
+                return 'VB_HOP_NHAT'
+            if 'AP_DUNG' in value or 'ÁP_DỤNG' in value:
+                return 'VB_AP_DUNG'
+        elif kind == 'relation':
+            if 'THUOC' in value or 'THUỘC' in value:
+                return 'THUOC'
+            if any(k in value for k in ('THAY_THE', 'BAI_BO', 'THAY_THẾ', 'BÃI_BỎ')):
+                return 'BI_TAC_DONG_HIEU_LUC_TOAN_BO' if any(k in value for k in ('BI', 'DUOC', 'BỊ', 'ĐƯỢC')) else 'QUY_DINH_HET_HIEU_LUC_TOAN_BO'
+            if any(k in value for k in ('SUA_DOI', 'BO_SUNG', 'SỬA_ĐỔI', 'BỔ_SUNG')):
+                return 'BI_TAC_DONG_HIEU_LUC_MOT_PHAN' if any(k in value for k in ('BI', 'DUOC', 'BỊ', 'ĐƯỢC')) else 'QUY_DINH_HET_HIEU_LUC_MOT_PHAN'
+            if 'HET_HIEU_LUC' in value or 'HẾT_HIỆU_LỰC' in value:
+                is_partial = any(k in value for k in ('MOT_PHAN', '1_PHAN', 'MỘT_PHẦN'))
+                is_passive = any(k in value for k in ('BI', 'TAC_DONG', 'BỊ', 'TÁC_ĐỘNG'))
+                if is_partial:
+                    return 'BI_TAC_DONG_HIEU_LUC_MOT_PHAN' if is_passive else 'QUY_DINH_HET_HIEU_LUC_MOT_PHAN'
+                else:
+                    return 'BI_TAC_DONG_HIEU_LUC_TOAN_BO' if is_passive else 'QUY_DINH_HET_HIEU_LUC_TOAN_BO'
+            if 'CHI_TIET' in value or 'CHI_TIẾT' in value:
+                return 'DUOC_QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH' if any(k in value for k in ('DUOC', 'BI', 'ĐƯỢC', 'BỊ')) else 'QUY_DINH_CHI_TIET_HUONG_DAN_THI_HANH'
+            if 'HUONG_DAN' in value or 'HƯỚNG_DẪN' in value:
+                return 'DUOC_HUONG_DAN_AP_DUNG' if any(k in value for k in ('DUOC', 'BI', 'ĐƯỢC', 'BỊ')) else 'HUONG_DAN_AP_DUNG'
+            if 'DINH_CHI' in value or 'ĐÌNH_CHỈ' in value:
+                return 'BI_DINH_CHI_THI_HANH' if any(k in value for k in ('BI', 'DUOC', 'BỊ', 'ĐƯỢC')) else 'DINH_CHI_THI_HANH'
+            if any(k in value for k in ('TAM_NGUNG', 'GIA_HAN', 'TẠM_NGƯNG', 'GIA_HẠN')):
+                return 'BI_TAM_NGUNG_GIA_HAN' if any(k in value for k in ('BI', 'DUOC', 'BỊ', 'ĐƯỢC')) else 'QUY_DINH_TAM_NGUNG_GIA_HAN'
+            if 'DINH_CHINH' in value or 'ĐÍNH_CHÍNH' in value:
+                return 'DUOC_DINH_CHINH' if any(k in value for k in ('DUOC', 'BI', 'ĐƯỢC', 'BỊ')) else 'DINH_CHINH'
+            if any(k in value for k in ('DICH', 'DỊCH', 'TRANSLAT', 'TIENG_ANH', 'TIẾNG_ANH', 'ENGLISH', 'PHU_LUC', 'PHỤ_LỤC', 'DINH_KEM', 'ĐÍNH_KÈM', 'LIEN_QUAN', 'LIÊN_QUAN', 'CONG_BO', 'CÔNG_BỐ')):
+                return 'DUOC_DAN_CHIEU' if any(k in value for k in ('DUOC', 'BI', 'ĐƯỢC', 'BỊ')) else 'DAN_CHIEU'
+            if 'DAN_CHIEU' in value or 'DẪN_CHIẾU' in value:
+                return 'DUOC_DAN_CHIEU' if any(k in value for k in ('DUOC', 'BI', 'ĐƯỢC', 'BỊ')) else 'DAN_CHIEU'
+            if 'GIAI_THICH' in value or 'GIẢI_THÍCH' in value:
+                return 'DUOC_GIAI_THICH' if any(k in value for k in ('DUOC', 'BI', 'ĐƯỢC', 'BỊ')) else 'GIAI_THICH'
+            if any(k in value for k in ('CAN_CU', 'CĂN_CỨ', 'TO_TRINH', 'TỜ_TRÌNH')):
+                return 'CAN_CU_BAN_HANH'
+            if 'HOP_NHAT' in value or 'HỢP_NHẤT' in value:
+                return 'HOP_NHAT'
+            if 'AP_DUNG' in value or 'ÁP_DỤNG' in value:
+                return 'AP_DUNG'
+        return None
+
+
+
+
+    explicit = annotation.get("code")
+    if explicit is not None and explicit != "":
+        result = resolve(explicit)
+        if result is None:
+            raise ValueError(
+                f"Unknown {kind} code {explicit!r}; ID={annotation.get('id')!r}: {path}"
+            )
+        return result, "code"
+    found = {}
+    for field in ("label", "type", "entity_type" if kind == "entity" else "relation_type", "labels"):
+        value = annotation.get(field)
+        if isinstance(value, list):
+            if len(value) > 1:
+                raise ValueError(f"Ambiguous {kind} labels in {field}; ID={annotation.get('id')!r}: {path}")
+            value = value[0] if value else None
+        result = resolve(value)
+        if result is not None:
+            found[field] = result
+    if len(set(found.values())) > 1:
+        raise ValueError(f"Conflicting {kind} label fields {found}; ID={annotation.get('id')!r}: {path}")
+    if found:
+        field = next(iter(found))
+        return found[field], field
+    raise ValueError(
+        f"Unknown {kind} code / missing recognizable label; ID={annotation.get('id')!r}; "
+        f"fields={sorted(annotation)}. Expected 'code', or an exact schema code/name in "
+        f"'label' or 'type' (no default label is assigned): {path}"
+    )
+
+
+def load_documents(root, strict: bool = True):
     """Require JSON full_text; CSV duplicates are not separate documents.
 
     Keep exact original offsets. Invalid/ambiguous spans are reported, not guessed.
@@ -73,9 +213,23 @@ def load_documents(root):
             if eid in ids:
                 raise ValueError(f"Duplicate entity ID {eid}: {path}")
             ids.add(eid)
-            code = entity.get("code")
-            if code not in ALL_ENTITIES:
-                raise ValueError(f"Unknown entity code {code}: {path}")
+            try:
+
+                code, code_field = annotation_code(entity, ENTITY_TAXONOMY, 'entity', path, ENTITY_ALIAS_MAP)
+
+            except ValueError as err:
+
+                if strict:
+
+                    raise
+
+                totals['excluded_entities_unknown_taxonomy_code'] += 1
+
+                issues.append({'file': str(path.relative_to(root)), 'entity_id': eid, 'reason': str(err)})
+
+                continue
+            if code_field != "code":
+                totals[f"entities_code_from_{code_field}"] += 1
             start, end = entity.get("start"), entity.get("end")
             if not isinstance(start, int) or not isinstance(end, int):
                 reason = "invalid_offsets"
@@ -107,6 +261,7 @@ def load_documents(root):
                 entities.append(
                     dict(
                         entity,
+                        code=code,
                         start=clean_start,
                         end=clean_end,
                         text=text[clean_start:clean_end],
@@ -128,12 +283,23 @@ def load_documents(root):
             totals["input_relations"] += 1
             if not isinstance(relation, dict):
                 raise ValueError(f"Invalid relation object: {path}")
-            code = (
-                str(relation.get("code") or relation.get("label") or "").strip().upper()
-            )
-            if code not in RELATION_ALIAS_MAP:
-                raise ValueError(f"Unknown relation code {code}: {path}")
-            canonical = RELATION_ALIAS_MAP[code]
+            try:
+
+                canonical, code_field = annotation_code(relation, RELATION_TAXONOMY, 'relation', path, RELATION_ALIAS_MAP)
+
+            except ValueError as err:
+
+                if strict:
+
+                    raise
+
+                totals['excluded_relations_unknown_taxonomy_code'] += 1
+
+                issues.append({'file': str(path.relative_to(root)), 'relation': relation, 'reason': str(err)})
+
+                continue
+            if code_field != "code":
+                totals[f"relations_code_from_{code_field}"] += 1
             key = (relation.get("from_id"), relation.get("to_id"), canonical)
             if key[0] not in ids or key[1] not in ids:
                 raise ValueError(f"Dangling relation {key}: {path}")
